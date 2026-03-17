@@ -803,4 +803,29 @@ nav {
   .design-axis {
     padding: 28px 24px;
   }
+
+  .project-title-en {
+    font-size: 22px;
+  }
+
+  .flow-diagram {
+    padding: 0 var(--side-padding);
+  }
+
+  .flow-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .proto-label {
+    font-size: 18px;
+  }
+
+  .proto-fallback {
+    font-size: 14px;
+  }
+
+  .proto-item iframe {
+    height: 500px;
+  }
 }
