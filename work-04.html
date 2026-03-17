@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up Flow Redesign — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <!-- タイトル -->
+      <div class="project-header">
+        <h1 class="project-title-en">会員登録フローを短くして購入率 6%・会員登録 11% 増加PJ</h1>
+      </div>
+
+      <!-- メタ情報 -->
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>2026年01月</dd>
+
+        <dt>体制</dt>
+        <dd>Pdm1名、企画1名、デザイナー1名（自分）、エンジニア8名</dd>
+
+        <dt>担当範囲</dt>
+        <dd>データ分析、追加施策の立案・提案（v1.1）、UIデザイン、プロトタイプ制作</dd>
+
+        <dt>成果</dt>
+        <dd>
+          <ul style="list-style:none; padding:0;">
+            <li>新規購入 取引金額 <strong>6%向上</strong></li>
+            <li>会員登録完了率 <strong>11%向上</strong>（発注者個人の登録完了率）</li>
+          </ul>
+        </dd>
+      </dl>
+
+
+
+      <!-- Before / After プロトタイプ -->
+      <div class="proto-grid">
+        <div class="proto-item">
+          <p class="proto-label">Before <span class="proto-fallback">（時間がかかる場合は<a href="https://www.figma.com/proto/2I8COl9z4xYDiB0MQXSGLY/-CSM--%E6%96%B0%E8%A6%8F%E8%B3%BC%E5%85%A5%E3%83%95%E3%83%AD%E3%83%BC%E5%88%B7%E6%96%B0PJ?page-id=3243%3A11612&node-id=3243-13447&p=f&viewport=-77%2C420%2C0.06&t=hhHmlMSiQ8gFZKTs-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3243%3A13447" target="_blank" rel="noopener">こちらからご覧ください</a>）</span></p>
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="812" src="https://embed.figma.com/proto/2I8COl9z4xYDiB0MQXSGLY/-CSM--%E6%96%B0%E8%A6%8F%E8%B3%BC%E5%85%A5%E3%83%95%E3%83%AD%E3%83%BC%E5%88%B7%E6%96%B0PJ?page-id=3243%3A11612&node-id=3243-13447&viewport=413%2C423%2C0.16&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3243%3A13447&embed-host=share" allowfullscreen></iframe>
+        </div>
+        <div class="proto-item">
+          <p class="proto-label">After <span class="proto-fallback">（時間がかかる場合は<a href="https://www.figma.com/proto/2I8COl9z4xYDiB0MQXSGLY/-CSM--%E6%96%B0%E8%A6%8F%E8%B3%BC%E5%85%A5%E3%83%95%E3%83%AD%E3%83%BC%E5%88%B7%E6%96%B0PJ?page-id=3243%3A11612&node-id=3243-11855&p=f&viewport=-77%2C420%2C0.06&t=hhHmlMSiQ8gFZKTs-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3243%3A11855" target="_blank" rel="noopener">こちらからご覧ください</a>）</span></p>
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="812" src="https://embed.figma.com/proto/2I8COl9z4xYDiB0MQXSGLY/-CSM--%E6%96%B0%E8%A6%8F%E8%B3%BC%E5%85%A5%E3%83%95%E3%83%AD%E3%83%BC%E5%88%B7%E6%96%B0PJ?page-id=3243%3A11612&node-id=3243-11855&viewport=413%2C423%2C0.16&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3243%3A11855&embed-host=share" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <section class="project-section"style="margin-top:72px;">
+        <h2 class="project-section-heading">Overview</h2>
+        <div class="project-text">
+          <p><strong>未ログインの購入フローで約23%がドロップ</strong></p>
+          <ul>
+            <li>未ログインユーザーが購入するには長い会員登録フローが必須。非会員の購入には会員登録が必須で、かなりの人数が購入ボタンを押してからのフローで離脱していた</li>
+          </ul>
+
+          <p><strong>企画担当のv1.0に、データ起点の追加施策を提案（v1.1）</strong></p>
+          <ul>
+            <li>登録フロー最小化のベース企画は企画担当が主導。デザイナーとして参加後、エンジニアが整備したログデータを自ら分析し、v1.1として2つの追加施策を提案・デザインした</li>
+          </ul>
+
+          <p><strong>会員登録完了率 <strong>11%向上</strong>・新規購入取引金額 <strong>6%向上</strong>（リリース前後比較）</strong></p>
+          <ul>
+            <li>①最初の画面で「60秒で登録完了・クーポンがもらえる」訴求を追加。②登録完了後に決済画面へ直接遷移。いずれもデータや競合他社のリサーチ結果を裏付けをもとに提案し、採用された</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Summary</h2>
+        <div class="project-text">
+          <p><strong>企画担当のベース施策にデータ起点の追加提案を重ね、購入率6%・登録完了率 11%の改善に貢献</strong></p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <p class="summary-card-label">😟 課題</p>
+            <p class="summary-card-title">長い登録フローが<br>購入の壁になっていた</p>
+            <ul>
+              <li>非会員の購入には会員登録が必須で、かなりの人数が購入ボタンを押してからのフローで離脱していた</li>
+              <li>ログデータが整備されておらず、具体的な離脱ポイントが不明</li>
+              <li>フロー内の離脱よりも「登録するかどうか」の意思決定前で多くのユーザーが離脱</li>
+            </ul>
+          </div>
+
+          <div class="summary-card">
+            <p class="summary-card-label">😊 貢献</p>
+            <p class="summary-card-title">データ分析から<br>追加施策を提案・実現</p>
+            <ul>
+              <li>エンジニアが整備したログデータを分析し、入口での離脱が主因であると特定</li>
+              <li>「60秒で登録できる・クーポンがもらえる」訴求を最初の画面に追加する施策を提案</li>
+              <li>決済画面への直接遷移を競合調査とデータをもとに提案・デザイン</li>
+            </ul>
+          </div>
+
+          <div class="summary-card">
+            <p class="summary-card-label">🌱 結果・学び</p>
+            <p class="summary-card-title">最小の変更で<br>最大のインパクト</p>
+            <ul>
+              <li>会員登録完了率 <strong>11%向上</strong>・新規購入取引金額 <strong>6%向上</strong>（リリース前後比較）</li>
+              <li>「デザインを足すより引く」ことで離脱が改善できるという確信を実体験として得た</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Process</h2>
+        <div class="process-flow">
+
+          <div class="process-step">
+            <p class="process-step-number">01</p>
+            <p class="process-step-title">リサーチ</p>
+          </div>
+
+          <div class="process-step">
+            <p class="process-step-number">02</p>
+            <p class="process-step-title">企画・要件定義</p>
+          </div>
+
+          <div class="process-step">
+            <p class="process-step-number">03</p>
+            <p class="process-step-title">デザイン</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Research (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Research</h2>
+        <div class="project-text">
+          <p><strong>1. ログデータの分析</strong></p>
+          <p>エンジニアが計測を整備したログデータをもとに自らデータ分析を実施。離脱は会員登録フロー内ではなく、「登録を開始するかどうか」の意思決定段階で多く発生していることが判明。v1.0のフロー最小化に加え、入口での離脱対策が必要と結論づけた。</p>
+        </div>
+        <div class="flow-diagram" style="margin-top:24px;">
+          <div class="flow-row">
+            <div class="flow-node">購入ボタン</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-node--problem">① 会員登録TOP</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">登録フロー</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-node--problem">② サービス詳細</div>
+            <div class="flow-arrow flow-arrow--exit">→ 離脱</div>
+          </div>
+          <div class="flow-callouts">
+            <div class="flow-callout">
+              <strong>① 最大の離脱ポイント</strong>
+              <p>購入意欲があるのに「登録しようか」の判断段階で多くが離脱。</p>
+            </div>
+            <div class="flow-callout">
+              <strong>② 決済に進まず離脱</strong>
+              <p>登録完了後にサービス詳細に戻され、そのまま購入を断念。</p>
+            </div>
+          </div>
+          <div class="flow-hypothesis">
+            <p><strong>仮説：</strong>①入口での訴求強化と、②登録後の<strong>決済画面への直遷移</strong>で購入完了率の大幅改善が見込める。</p>
+          </div>
+        </div>
+        <div class="project-text" style="margin-top:40px;">
+          <p><strong>2. 競合他社の会員登録フロー調査</strong></p>
+          <p>国内外の主要サービスの会員登録フローおよび購入完了後のリダイレクト先を調査。多くのサービスが購入フローに最適化した画面遷移を採用していることを確認。決済画面での離脱が多いという自社データと照らし合わせ、登録後の戻り先を決済画面に変更する施策を提案した。</p>
+        </div>
+        <div class="project-images cols-1" style="margin-top:24px;">
+          <img src="images/register-reserach.png" alt="競合他社の会員登録フロー調査">
+        </div>
+      </section>
+
+      <!-- Planning & Requirements (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Planning & Requirements</h2>
+        <div class="project-text">
+          <p><strong>1. v1.1追加施策として2つの改善を提案</strong></p>
+          <p>企画担当が主導したv1.0（フロー最小化）をベースに、データ分析と競合調査の結果から追加施策をv1.1として提案。購入ボタンを押すユーザーはすでに発注意向が高いため、「登録前の動機付け」と「登録後の購入継続」が次の改善ポイントと定義した。</p>
+          <p><strong>■ 追加施策①：入口での訴求強化</strong><br>最初の画面に「60秒で登録完了」「クーポンがもらえる」訴求を追加。登録を迷うユーザーの背中を押す設計に変更。</p>
+          <p><strong>■ 追加施策②：決済画面への直接遷移</strong><br>登録完了後の戻り先をサービストップではなく決済画面に変更。競合調査で多くのサービスが採用していることを確認し、決済画面での離脱が多いという自社データとあわせて提案した。また、既存のクーポンのリデザインも推進</p>
+        </div>
+      </section>
+
+      <!-- Design (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Design</h2>
+        <div class="project-text">
+          <p><strong>1. フォームのシンプル化とクーポン訴求の可視化</strong></p>
+          <p>登録フォームを必須項目のみに絞り、入力ステップを最小化。クーポンのベネフィットをより目立つ位置に配置し、「登録する理由」を入口で明確に伝える設計とした。「いかにデザインしすぎないか」を指針に、不要なUIを徹底的に排除した。</p>
+        </div>
+        <div class="project-images cols-1" style="margin-top:24px;">
+          <img src="images/register.png" alt="登録フォーム改善デザイン">
+          <img src="images/register-banner.png" alt="クーポン訴求バナーデザイン">
+        </div>
+        <div class="project-text" style="margin-top:40px;">
+          <p><strong>2. プロトタイプ制作</strong></p>
+          <p>関係者レビューおよびPOレビューに向けてFigmaプロトタイプを作成。フロー全体の体験を実際に触れる形で共有し、改善施策の意図をステークホルダーに伝えた。</p>
+        </div>
+      </section>
+
+      <!-- You may also like -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-01.html" class="work-card">
+            <img src="images/01.png" alt="電話占い新規会員登録改善">
+            <div class="work-card-overlay">
+              <span class="work-card-title">電話占いのバナーを変更＆導線追加で会員登録 40% 増加PJ</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+          <a href="work-02.html" class="work-card">
+            <img src="images/02.png" alt="AI Studio">
+            <div class="work-card-overlay">
+              <span class="work-card-title">新規プロダクトの0→1→10のデザイン推進PJ</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shintaro Yanagi — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <!-- 作品グリッド -->
+  <main class="page">
+    <div class="work-grid">
+
+      <!-- ▼ 作品カード（必要なだけ複製してください） -->
+
+      <a href="work-01.html" class="work-card">
+        <img src="images/01.png" alt="電話占い新規会員登録改善">
+        <div class="work-card-overlay">
+          <span class="work-card-title">電話占いのバナーを変更＆導線追加で会員登録 40% 増加PJ</span>
+          <span class="work-card-year">2025</span>
+        </div>
+      </a>
+
+      <a href="work-02.html" class="work-card">
+        <img src="images/02.png" alt="AI Studio">
+        <div class="work-card-overlay">
+          <span class="work-card-title">新規プロダクトの0→1→10のデザイン推進PJ</span>
+          <span class="work-card-year">2024</span>
+        </div>
+      </a>
+
+      <a href="work-03.html" class="work-card">
+        <img src="images/03.png" alt="AX推進 デザインチーム生成AI活用">
+        <div class="work-card-overlay">
+          <span class="work-card-title">デザインチームの生成AI活用推進PJ</span>
+          <span class="work-card-year">2025</span>
+        </div>
+      </a>
+
+      <a href="work-04.html" class="work-card">
+        <img src="images/04.png" alt="プロジェクト04">
+        <div class="work-card-overlay">
+          <span class="work-card-title">会員登録フローを短くして購入率 6%・会員登録 11% 増加PJ</span>
+          <span class="work-card-year">2026</span>
+        </div>
+      </a>
+
+      <!-- ▲ ここまでが1セット。以下に追加可能 -->
+
+    </div>
+  </main>
+
+  <!-- 先頭に戻るボタン -->
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

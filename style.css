@@ -1,0 +1,806 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-sub: #888888;
+  --color-border: #e0e0e0;
+  /* Jost = htgd に最も近い幾何学系サンセリフ */
+  --font-main: 'Jost', 'Noto Sans JP', sans-serif;
+  --nav-height: 60px;
+  --max-width: 1280px;
+  --side-padding: 60px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 外部遷移リンク（青） */
+a.link-external,
+.proto-fallback a,
+.project-text a,
+.project-meta a,
+.timeline-body a {
+  color: #0066cc;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.proto-fallback {
+  font-size: 20px;
+  font-weight: 400;
+  color: #999;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--side-padding);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-main);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--color-text);
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.4;
+}
+
+/* 選択中でないリンクを薄くする */
+.nav-links:has(.active) a:not(.active) {
+  opacity: 0.4;
+}
+
+/* ===========================
+   PAGE WRAPPER
+=========================== */
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+}
+
+/* ===========================
+   WORK GRID (TOP PAGE)
+=========================== */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  width: 92%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.work-card {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #f0f0f0;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.work-card:hover img {
+  transform: scale(1.03);
+}
+
+.work-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+}
+
+.work-card:hover .work-card-overlay {
+  background: rgba(0,0,0,0.52);
+}
+
+.work-card-title {
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.work-card-year {
+  color: rgba(255,255,255,0.75);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s 0.05s, transform 0.35s 0.05s;
+}
+
+.work-card:hover .work-card-title,
+.work-card:hover .work-card-year {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   ABOUT PAGE
+=========================== */
+.about-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px var(--side-padding) 160px;
+}
+
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 28px;
+}
+
+.about-name {
+  font-family: var(--font-main);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.about-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-sub);
+  letter-spacing: 0;
+}
+
+/* Section heading with ♦ */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 32px;
+}
+
+.section-heading::before {
+  content: '♦';
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.about-section {
+  margin-bottom: 72px;
+}
+
+/* Career timeline */
+.timeline-item {
+  margin-bottom: 36px;
+}
+
+.timeline-date {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+
+.timeline-body {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* About body text */
+.about-body {
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+}
+
+.about-body p + p {
+  margin-top: 16px;
+}
+
+.about-body strong {
+  font-weight: 600;
+}
+
+/* Personal Interests */
+.interests-list {
+  list-style: none;
+  font-size: 16px;
+  line-height: 2.1;
+  color: #333;
+}
+
+.interests-list li::before {
+  content: '・';
+  margin-right: 4px;
+}
+
+/* ===========================
+   PROJECT DETAIL PAGE
+=========================== */
+.project-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 0 160px;
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 60px;
+}
+
+.project-title-en {
+  font-family: var(--font-main);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.project-title-ja {
+  font-size: 16px;
+  color: var(--color-text-sub);
+  letter-spacing: 0;
+}
+
+/* Meta table: 期間 / 体制 / 担当範囲 / 成果 */
+.project-meta {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px 24px;
+  margin-bottom: 56px;
+  font-size: 16px;
+  line-height: 1.8;
+  border-top: 1px solid var(--color-border);
+  padding: 24px 60px 0;
+}
+
+.project-meta dt {
+  font-weight: 700;
+  color: var(--color-text);
+  padding-top: 2px;
+}
+
+.project-meta dd {
+  color: #333;
+}
+
+.project-hero {
+  width: 100%;
+  margin-bottom: 72px;
+  overflow: hidden;
+}
+
+.project-hero img {
+  width: 100%;
+  height: auto;
+}
+
+.project-section {
+  margin-bottom: 72px;
+}
+
+.project-section-heading {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  letter-spacing: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.project-text {
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.project-text p + p {
+  margin-top: 16px;
+}
+
+/* 太字見出しp → 本文p：近接（タイト） */
+.project-text p:has(> strong) + p {
+  margin-top: 6px;
+}
+
+/* 本文p / リスト → 次の太字見出しp：広め */
+.project-text p + p:has(> strong),
+.project-text ul + p:has(> strong) {
+  margin-top: 32px;
+}
+
+.project-text ul {
+  margin-top: 6px;
+  margin-bottom: 0;
+  padding-left: 1.2em;
+}
+
+.project-text li {
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.project-text ul + p {
+  margin-top: 32px;
+}
+
+.project-section .project-images {
+  padding: 0 60px;
+}
+
+/* Figma Proto Embed */
+.proto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 60px;
+  margin-top: 24px;
+}
+
+.proto-label {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.proto-item iframe {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Funnel Chart */
+/* Flow Diagram */
+.flow-diagram {
+  padding: 0 60px;
+}
+
+.flow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  padding: 12px 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.flow-node--problem {
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 700;
+}
+
+.flow-arrow {
+  font-size: 20px;
+  color: #aaa;
+}
+
+.flow-arrow--exit {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.flow-callouts {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.flow-callout {
+  flex: 1;
+  padding: 20px 24px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.flow-callout strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.flow-hypothesis {
+  margin-top: 16px;
+  padding: 20px 24px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.funnel-hypothesis-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.funnel-hypothesis p {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===========================
+   設計の軸 (Design Axis)
+=========================== */
+.design-axis {
+  background: #f8f8f8;
+  padding: 40px 48px;
+  margin-top: 24px;
+}
+
+.design-axis-concept {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--color-text);
+}
+
+.design-axis-body {
+  font-size: 15px;
+  line-height: 2;
+  color: #444;
+}
+
+/* ===========================
+   プロセス (Process)
+=========================== */
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 24px 60px 0;
+  border: 1px solid var(--color-border);
+}
+
+.process-step {
+  padding: 28px 24px;
+  border-right: 1px solid var(--color-border);
+  position: relative;
+}
+
+.process-step:last-child {
+  border-right: none;
+}
+
+.process-step-number {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--color-text-sub);
+  letter-spacing: 0;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.process-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.process-step-body {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ===========================
+   Summary 3-column
+=========================== */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  margin: 24px 60px 0;
+}
+
+.summary-card {
+  background: #f8f8f8;
+  padding: 32px 28px;
+}
+
+.summary-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.summary-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.summary-card ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 2;
+  color: #444;
+}
+
+.summary-card li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.summary-card li::before {
+  content: '- ';
+  color: var(--color-text-sub);
+}
+
+/* ===========================
+   Project images
+=========================== */
+.project-images {
+  display: grid;
+  gap: 3px;
+  margin-top: 24px;
+}
+
+.project-images.cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-images.cols-1 {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.project-images img {
+  width: 100%;
+  height: auto;
+}
+
+/* ===========================
+   YOU MAY ALSO LIKE
+=========================== */
+.also-like {
+  border-top: 1px solid var(--color-border);
+  padding: 56px 60px 0;
+}
+
+.also-like-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .also-like-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   BACK TO TOP BUTTON
+=========================== */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: rgba(180,180,180,0.45);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  border: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.back-to-top svg {
+  width: 16px;
+  height: 16px;
+  stroke: #555;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  :root {
+    --side-padding: 20px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    padding: 24px 0 80px;
+  }
+
+  .work-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-page {
+    padding: 48px var(--side-padding) 100px;
+  }
+
+  .project-page {
+    padding: 48px 0 100px;
+  }
+
+  .project-header,
+  .project-meta,
+  .project-section-heading,
+  .project-text,
+  .also-like {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+  }
+
+  .summary-grid,
+  .process-flow {
+    margin-left: var(--side-padding);
+    margin-right: var(--side-padding);
+  }
+
+  .about-name {
+    font-size: 28px;
+  }
+
+  .section-heading,
+  .project-section-heading {
+    font-size: 20px;
+  }
+
+  .process-flow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-step {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta {
+    grid-template-columns: 72px 1fr;
+    font-size: 14px;
+  }
+
+  .design-axis {
+    padding: 28px 24px;
+  }
+}

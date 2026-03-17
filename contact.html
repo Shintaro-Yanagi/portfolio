@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — YOUR NAME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html">Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="contact-page">
+
+      <h1 class="contact-title">Contact</h1>
+
+      <!--
+        ▼ フォームの送信先はFormspree等を使うと簡単です。
+           https://formspree.io/ でフォームを作り、action に URL を入れてください。
+           例: action="https://formspree.io/f/xxxxxxxx"
+      -->
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-field">
+          <input type="text" name="name" placeholder="Your Name..." required>
+        </div>
+        <div class="form-field">
+          <input type="email" name="email" placeholder="Your Email Address..." required>
+        </div>
+        <div class="form-field">
+          <textarea name="message" placeholder="Your Message..." required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Send</button>
+        </div>
+      </form>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>

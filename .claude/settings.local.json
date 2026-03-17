@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(SKILLS_DIR=\"/Users/shintaro0808/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/0297e4c4-e215-479a-84a3-862fcae0e029/cfb3a762-f1fc-493b-8034-100a0c1ccb8a/skills\")",
+      "Bash(mkdir -p \"$SKILLS_DIR/portfolio\")",
+      "Bash(mkdir -p \"$SKILLS_DIR/portfolio/evals\")",
+      "Bash(mkdir -p \"/tmp/portfolio-skill-workspace/iteration-1\")",
+      "Bash(python -m scripts.package_skill ../portfolio-writer)",
+      "Bash(python3 -m scripts.package_skill ../portfolio-writer)",
+      "Bash(pip3 install pyyaml --quiet)",
+      "WebFetch(domain:aisato1106.myportfolio.com)",
+      "Bash(python3 -c \":*)",
+      "Bash(grep -h \"src=\"\"images/\" /Users/shintaro0808/Downloads/ポートフォリオ/work-0*.html)",
+      "Bash(/usr/bin/python3:*)",
+      "Bash(npm list:*)",
+      "Bash(npm install:*)",
+      "Bash(vercel --version)"
+    ]
+  }
+}
