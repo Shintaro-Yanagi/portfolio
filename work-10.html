@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSUSHIプロトタイプ Webサイト制作 — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <!-- タイトル -->
+      <div class="project-header">
+        <h1 class="project-title-en">OSUSHIプロトタイプ</h1>
+        <p class="project-title-ja">Webサイト</p>
+      </div>
+
+      <!-- メタ情報 -->
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>1ヶ月程度</dd>
+
+        <dt>体制</dt>
+        <dd>ライター1名、デザイナー1名（自分）</dd>
+
+        <dt>担当範囲</dt>
+        <dd>要件定義、情報設計、ビジュアルデザイン、STUDIO構築</dd>
+
+        <dt>成果</dt>
+        <dd>
+          <ul style="list-style:none; padding:0;">
+            <li>サービスLP公開。企画・デザイン・実装を一気通貫で担当。</li>
+          </ul>
+        </dd>
+      </dl>
+
+      <!-- ヒーロー画像 -->
+      <div class="project-hero">
+        <img src="images/oushi-prototype.webp" alt="OSUSHIプロトタイプ LP">
+      </div>
+
+      <!-- サイトリンク -->
+      <div style="text-align:center; margin-bottom:48px;">
+        <a href="https://prototype.osushi-inc.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; background:#1a1a1a; color:#fff; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          サイトを見る
+        </a>
+      </div>
+
+      <!-- Overview -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Overview</h2>
+        <div class="project-text">
+          <p><strong>副業先のサービスLPをライターと協業しながら一気通貫で担当</strong></p>
+          <ul>
+            <li>副業でお手伝いしている株式会社OSUSHIのプロトタイプサービスのLPを制作。ライター1名と協業しながら、要件定義・情報設計・ビジュアルデザイン・STUDIO構築まで単独で担当した。</li>
+          </ul>
+
+          <p><strong>企画からSTUDIO構築まで一貫して対応</strong></p>
+          <ul>
+            <li>ライターとコンテンツの方向性を擦り合わせながら進行。Figmaでのデザインとシステムの構築を並行して進め、約1ヶ月でのリリースを達成した。</li>
+          </ul>
+
+        </div>
+      </section>
+
+     
+
+      <!-- You may also like -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-09.html" class="work-card">
+            <img src="images/oushi-lp.webp" alt="OSUSHI AIエージェント Webサイト">
+            <div class="work-card-overlay">
+              <span class="work-card-title">企画からSTUDIO構築まで2日で完成させたサービスLP制作</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+          <a href="work-02.html" class="work-card">
+            <img src="images/02.png" alt="AI Studio">
+            <div class="work-card-overlay">
+              <span class="work-card-title">新規プロダクトの0→1→10のデザイン推進PJ</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+          <a href="work-05.html" class="work-card">
+            <img src="images/05.png" alt="バナー制作">
+            <div class="work-card-overlay">
+              <span class="work-card-title">インターン時代のバナー制作PJ</span>
+              <span class="work-card-year">2023</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>

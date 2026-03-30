@@ -680,7 +680,12 @@ nav {
 =========================== */
 .also-like {
   border-top: 1px solid var(--color-border);
-  padding: 56px 60px 0;
+  padding: 56px 0 0;
+}
+
+.also-like .project-section-heading {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .also-like-grid {
@@ -802,6 +807,28 @@ nav {
 
   .design-axis {
     padding: 28px 24px;
+  }
+
+  /* カードオーバーレイ：スマホは非表示 */
+  .work-card-overlay {
+    display: none;
+  }
+
+  .work-card {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .work-card img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .project-section .project-images,
+  .proto-grid,
+  .flow-diagram {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
   }
 
   .project-title-en {

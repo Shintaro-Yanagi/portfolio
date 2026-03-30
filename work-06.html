@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロフィール情報設計の再定義と本人確認UIの改善PJ — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <!-- タイトル -->
+      <div class="project-header">
+        <h1 class="project-title-en">プロフィール画面の情報設計最適化&本人確認の実施率UP PJ</h1>
+      </div>
+
+      <!-- メタ情報 -->
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>2週間</dd>
+
+        <dt>体制</dt>
+        <dd>シニアデザイナー1名、デザイナー1名（自分）、PM各1名、エンジニア1名</dd>
+
+        <dt>担当範囲</dt>
+        <dd>情報設計、UI設計</dd>
+
+        <dt>成果</dt>
+        <dd>
+          <ul style="list-style:none; padding:0;">
+            <li>本人確認率：<strong>5% 向上</strong></li>
+          </ul>
+        </dd>
+      </dl>
+
+      <!-- ヒーロー画像 -->
+      <div class="project-hero">
+        <img src="images/profile-placeholder.png" alt="プロフィール情報設計 Before/After">
+        <img src="images/profile-input.png" alt="本人確認入力 Before/After" style="margin-top:16px;">
+      </div>
+
+      <!-- Overview -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Overview</h2>
+        <div class="project-text">
+          <p><strong>プロフィールの情報がカテゴリに沿って整理されておらず、本人確認等のステータスが実施済みなのかまだできてないのかが分かりづらいUIだった</strong></p>
+          <ul>
+            <li>プロフィールトップページの情報がカテゴリに沿って分かれておらず、ユーザーが必要な情報にたどり着きにくい状態だった。また、本人確認・機密保持契約などの完了状態が判断できず、事業的にやって欲しい機能をうまく促進できてなかった</li>
+          </ul>
+
+          <p><strong>情報設計の最適化と本人確認ステータスの入力促進</strong></p>
+          <ul>
+            <li>新卒で初めて担当したプロジェクト。情報をカテゴリ単位で再整理し、本人確認の完了・未完了が直感的に伝わるUIを設計。他ページとの整合性が取れていない箇所も自ら発見・提案し、スコープを拡大して対応した。</li>
+          </ul>
+
+          <p><strong>本人確認率が 5% 向上</strong></p>
+          <ul>
+            <li>リニューアル後の計測で本人確認率が 5% 向上。UIの見せ方が行動を変えることを、初プロジェクトで実証した。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Summary</h2>
+        <div class="project-text">
+          <p><strong>情報設計から本人確認UIの工夫まで担い、初プロジェクトで本人確認率 5% 向上を達成</strong></p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <p class="summary-card-label">😟 課題</p>
+            <p class="summary-card-title">情報の散在と<br>ステータスが完了・未完了かわからない</p>
+            <ul>
+              <li>プロフィールの情報がカテゴリに沿って整理されておらず、わかりづらかった</li>
+              <li>本人確認・機密保持契約の完了状態がUIから判断できず、信頼性の訴求ができていなかった</li>
+            </ul>
+          </div>
+
+          <div class="summary-card">
+            <p class="summary-card-label">😊 貢献</p>
+            <p class="summary-card-title">情報設計・UI設計・提案を<br>一気通貫で担当</p>
+            <ul>
+              <li>プロフィール情報をカテゴリ単位で再整理し、情報設計を再定義</li>
+              <li>本人確認の完了・未完了が直感的に伝わるUIを設計・提案</li>
+              <li>他ページとの整合性が取れていない箇所を自ら発見し、スコープ拡大を提案</li>
+            </ul>
+          </div>
+
+          <div class="summary-card">
+            <p class="summary-card-label">🌱 結果・学び</p>
+            <p class="summary-card-title">本人確認率 5% 向上・<br>情報設計の重要性を体得</p>
+            <ul>
+              <li>本人確認率が 5% 向上。UIの見せ方が行動に直結することを実証</li>
+              <li>初プロジェクトで情報設計から提案・検証まで一気通貫で経験</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Process</h2>
+        <div class="process-flow">
+
+          <div class="process-step">
+            <p class="process-step-number">01</p>
+            <p class="process-step-title">リサーチ</p>
+          </div>
+
+          <div class="process-step">
+            <p class="process-step-number">02</p>
+            <p class="process-step-title">情報設計・UI設計</p>
+          </div>
+
+          <div class="process-step">
+            <p class="process-step-number">03</p>
+            <p class="process-step-title">レビュー・提案</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Research (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Research</h2>
+        <div class="project-text">
+          <p><strong>1. 他社調査</strong></p>
+          <p>競合・類似サービスのプロフィールページ構造を調査し、情報設計のパターンと本人確認ステータスの見せ方を比較分析。改善の方向性を定めるインプットをした。</p>
+        </div>
+        <div class="project-images single" style="margin-top:24px;">
+          <img src="images/profile-reference.png" alt="他社調査">
+        </div>
+
+        <div class="project-text" style="margin-top:40px;">
+          <p><strong>2. 現状のプロフィールページを分析し、課題を定義</strong></p>
+          <p>プロフィールトップページの情報構造を洗い出し、カテゴリに沿って整理されていない箇所を特定。あわせて本人確認・機密保持契約のステータスがUIから判断できない状態を課題として認識</p>
+        </div>
+      </section>
+
+      <!-- Planning & Requirements (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Planning & Requirements</h2>
+        <div class="project-text">
+          <p><strong>1. 情報をカテゴリ単位で再整理し、構造を定義</strong></p>
+          <p>プロフィールに掲載される情報をカテゴリごとに分類し、ユーザーが必要な情報にたどり着きやすい構造を定義。情報の優先度と配置のルールを整理してから設計に入った。</p>
+        </div>
+
+        <div class="project-text" style="margin-top:40px;">
+          <p><strong>2. 他ページとの整合性改善を自ら提案</strong></p>
+          <p>プロフィールtopがそれ以外のページと整合性が取れていない箇所を発見し、あわせて改善することを自ら提案。当初スコープ外だったが、全体の一貫性を保つために必要と判断し推進した。</p>
+        </div>
+        <div class="project-images single" style="margin-top:24px;">
+          <img src="images/profile-overroll.png" alt="Figma全体設計">
+        </div>
+      </section>
+
+      <!-- Design (Detail) -->
+      <section class="project-section">
+        <h2 class="project-section-heading">Design</h2>
+        <div class="project-text">
+          <p><strong>1. 本人確認ステータスが直感的に伝わるUIの設計</strong></p>
+          <p>本人確認・機密保持契約の完了・未完了が一目でわかるUIを設計。完了状態の視覚的な強調と、未完了時の行動喚起を両立させた見せ方を工夫した。</p>
+        </div>
+        <div class="project-images single" style="margin-top:24px;">
+          <img src="images/profile-pattern.png" alt="本人確認ステータスUIパターン一覧">
+        </div>
+
+        <div class="project-text" style="margin-top:40px;">
+          <p><strong>2. アンケートでデザイン案を検証し、方向性をフィックス</strong></p>
+          <p>デザイン案に対してアンケートを実施し、本人確認ステータスの完了・未完了が一目でわかるのはどちらかヒアリングを行った。定性的な意見を集めることで納得感のある提案ができた</p>
+        </div>
+        <div class="project-images single" style="margin-top:24px;">
+          <img src="images/profile-annke-to.png" alt="アンケート検証3案">
+        </div>
+      </section>
+
+      <!-- You may also like -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-01.html" class="work-card">
+            <img src="images/01.png" alt="電話占い新規会員登録改善">
+            <div class="work-card-overlay">
+              <span class="work-card-title">電話占いのバナーを変更＆導線追加で会員登録 40% 増加PJ</span>
+              <span class="work-card-year">2025</span>
+            </div>
+          </a>
+          <a href="work-02.html" class="work-card">
+            <img src="images/02.png" alt="AI Studio">
+            <div class="work-card-overlay">
+              <span class="work-card-title">新規プロダクトの0→1→10のデザイン推進PJ</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+          <a href="work-04.html" class="work-card">
+            <img src="images/04.png" alt="会員登録フロー刷新">
+            <div class="work-card-overlay">
+              <span class="work-card-title">会員登録フローを短くして購入率 6%・会員登録 11% 増加PJ</span>
+              <span class="work-card-year">2026</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>
