@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coconala Search Tab Improvement — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <div class="project-header">
+        <h1 class="project-title-en">ココナラ「探すタブ」リニューアルPJ</h1>
+        <p class="project-title-ja">Coconala Search Tab Improvement</p>
+      </div>
+
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>2026年1月</dd>
+
+        <dt>体制</dt>
+        <dd>PdM 1名、デザイナー 1名（自分）</dd>
+
+        <dt>担当範囲</dt>
+        <dd>定量データ分析、競合調査、課題定義、UI設計・改善提案、執行会議での承認取得</dd>
+
+        <dt>成果</dt>
+        <dd>CTR・CVRデータから低効率動線を特定。高CVRの「保存した検索条件」の配置最適化を含む改善UIを設計・提案。執行会議でデザイン承認を取得。ロードマップ入り済み。</dd>
+
+        <dt>使用ツール</dt>
+        <dd>Figma／データ分析（社内ツール）</dd>
+      </dl>
+
+      <!-- ========== アイキャッチ ========== -->
+      <div class="project-hero">
+        <img src="images/search_2048.png" alt="ココナラ探すタブ改善 — Before/After">
+      </div>
+
+      <!-- ========== はじめに ========== -->
+      <section class="project-section" id="intro">
+        <h2 class="project-section-heading">はじめに</h2>
+        <div class="project-text">
+          <p>サービスを探すことがコアなプラットフォームにもかかわらず、探すタブには使われていない動線が混在していた。定量データ・競合調査から課題を特定し、ユーザーが迷わずサービスを探せるシンプルな画面へ再設計した施策。</p>
+        </div>
+      </section>
+
+      <!-- ========== 目次 ========== -->
+      <section class="project-section">
+        <h2 class="project-section-heading">目次</h2>
+        <ol class="toc-list" style="margin: 0 60px;">
+          <li><span class="toc-number">01</span><a href="#overview">プロジェクトの概要</a></li>
+          <li><span class="toc-number">02</span><a href="#research">コンセプト設計の概要</a></li>
+          <li><span class="toc-number">03</span><a href="#design">コア課題の解決に向けたUI設計</a></li>
+          <li><span class="toc-number">04</span><a href="#prototype">プロトタイプ</a></li>
+          <li><span class="toc-number">05</span><a href="#closing">終わりに</a></li>
+        </ol>
+      </section>
+
+      <!-- ========== プロジェクトの概要 ========== -->
+      <section class="project-section" id="overview">
+        <h2 class="project-section-heading">プロジェクトの概要</h2>
+
+        <!-- コンセプト：黒カード -->
+        <div style="background:#f5f5f5; border-radius:8px; padding:28px 32px; margin: 0 60px;">
+          <p style="font-weight:700; margin:0 0 10px; color:#aaa; font-size:14px; letter-spacing:0.08em;">CONCEPT</p>
+          <p style="margin:0; font-size:18px; line-height:1.8; font-weight:500;">探すタブの動線をシンプルに再構成し、<br>紛らわしい低効率動線を整理することで、検索〜購入CVRを高める。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p>探すタブ表示UUを対象に各動線のCTR・CVRを集計したところ、検索窓と検索履歴の2動線だけでクリックの約9割を占めることが判明。一方、求人投稿・人材紹介・ブログの合計CTRは数%程度にとどまっていた。さらに「保存した検索条件」はCTRが集計構造上低くなる特性があるが、CVRは全動線中最高水準という事実も明らかに。低効率動線を整理・再配置し、検索から購入へのCVR向上を目指した。</p>
+        </div>
+
+        <!-- プロセス図：矢印つき横フロー -->
+        <div style="display:grid; grid-template-columns:1fr 32px 1fr 32px 1fr; align-items:center; margin: 40px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 10px; letter-spacing:0.08em;">STEP 01</p>
+            <p style="font-weight:700; margin:0 0 8px;">定量データ分析</p>
+            <p style="margin:0; color:#555;">各動線のCTR・CVRを集計し、動線ごとの実態を可視化</p>
+          </div>
+          <div style="text-align:center; color:#aaa; font-size:20px; font-weight:300;">→</div>
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 10px; letter-spacing:0.08em;">STEP 02</p>
+            <p style="font-weight:700; margin:0 0 8px;">競合調査</p>
+            <p style="margin:0; color:#555;">他社マーケットプレイスの検索タブUIを調査し、業界標準の設計パターンを整理</p>
+          </div>
+          <div style="text-align:center; color:#aaa; font-size:20px; font-weight:300;">→</div>
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 10px; letter-spacing:0.08em;">STEP 03</p>
+            <p style="font-weight:700; margin:0 0 8px;">UI設計・改善提案</p>
+            <p style="margin:0; color:#555;">課題に基づき、動線の整理と情報設計の再構成を行った改善UIを提案</p>
+          </div>
+        </div>
+
+        <!-- デザインプロセス -->
+        <h2 class="project-section-heading" style="margin-top: 56px;">🧑‍💻 方向性を受け取り、課題定義から提案まで自律的に推進</h2>
+        <div class="project-text">
+          <p>PdMから「探すタブを改善したい」という大まかな方向性を受け取り、何が問題でどう直すべきかの定義から自分で担当。定量データ分析・競合調査・課題定義・施策立案・UI設計・執行会議への提案まで一貫して推進した。「何を作るか」のスコープ設計から関わった施策。</p>
+        </div>
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/04e6cddd-91bc-4539-9462-87c66f9d42d9.png" alt="デザインプロセス概要">
+        </div>
+
+      </section>
+
+      <!-- ========== コンセプト設計の概要 ========== -->
+      <section class="project-section" id="research">
+        <h2 class="project-section-heading">コンセプト設計の概要</h2>
+
+        <div class="project-text">
+          <p><strong>1. 定量データから動線の優先度を整理</strong></p>
+          <p>探すタブ表示UUを対象に、各動線のCTR・CVRを集計。検索窓と検索履歴の2動線だけでクリックの約9割を占める一方、求人投稿・人材紹介・ブログの合計CTRは数%程度にとどまっていた。また「保存した検索条件」はCTRが集計構造上低くなる特性があるが、CVRは全動線中最高水準という事実も判明した。</p>
+        </div>
+
+        <!-- 既存UIの課題 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/3c7f1640-2c10-46b1-9bbe-c1745998021d.png" alt="既存UIの課題 — 使われていない動線が上部を占有">
+        </div>
+
+        <!-- データ：3グループ -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">✅ よく使われる動線</p>
+            <ul style="margin:0; padding-left:20px; line-height:2.2;">
+              <li><strong>検索窓</strong>　CTR 6割台・CVR 高水準</li>
+              <li><strong>検索履歴</strong>　CTR 2割台・CVR 高水準（再訪ユーザーに有効）</li>
+            </ul>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">⚠️ ほとんど使われない動線</p>
+            <ul style="margin:0; padding-left:20px; line-height:2.2;">
+              <li>求人募集を投稿する　<span style="font-size:14px; color:#aaa;">購入CVR 1%未満</span></li>
+              <li>人材を紹介してもらう</li>
+              <li>ブログを探す</li>
+            </ul>
+            <p style="margin:16px 0 0; font-size:14px; color:#aaa;">合計CTRは数%程度。探すタブでは活用されていない状態</p>
+          </div>
+        </div>
+        <!-- 保存した条件：独立カード -->
+        <div style="background:#f5f5f5; border-radius:8px; padding:24px; margin: 16px 60px 0; display:flex; align-items:flex-start; gap:20px;">
+          <div style="flex:1;">
+            <p style="font-weight:700; margin:0 0 8px;">⚡ 特殊な動線：保存した検索条件</p>
+            <p style="margin:0; color:#555; line-height:1.8;">CTRは集計構造上低くなる（保存条件が存在するユーザーにのみ表示されるため、全表示UUで割ると低く見える）が、CVRは全動線中最高水準。活用されれば最も購入につながる動線。</p>
+          </div>
+        </div>
+
+        <!-- インサイト callout -->
+        <div style="margin: 24px 60px 0;">
+          <div class="flow-callout">
+            <strong>💡 判断：</strong>検索窓・検索履歴の2動線でクリックの約9割を占める。求人投稿・人材紹介・ブログの合計CTRは数%程度であり、探すタブのスペースを割く優先度は低いと判断。また「保存した条件」はCTRが集計構造上低くなる特性があるが、CVRは全動線中最高水準という事実から、配置最適化が最もインパクトある施策と結論づけた。
+          </div>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>2. 競合調査から探すタブの設計パターンを整理</strong></p>
+          <p>他社マーケットプレイスアプリの検索タブを調査したところ、多くが検索窓を最上部に固定し、検索履歴や保存条件を上部に配置するシンプルな構成を採用。使われていない動線をメイン画面に並べることは認知負荷を高め、探索行動の妨げになると判断した。</p>
+        </div>
+
+        <!-- 競合共通パターン（黒チップ形式） -->
+        <div style="background:#f5f5f5; border-radius:8px; padding:24px; margin: 24px 60px 0;">
+          <p style="font-weight:700; margin:0 0 16px;">競合に共通する検索タブパターン</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">検索窓を最上部に固定</span>
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">検索履歴を上部に表示</span>
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">使用頻度の少ない動線は下部または別画面に移動</span>
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">未ログイン・初回訪問でも探索を促す設計</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== コア課題の解決に向けたUI設計 ========== -->
+      <section class="project-section" id="design">
+        <h2 class="project-section-heading">コア課題の解決に向けたUI設計</h2>
+
+        <div class="project-text">
+          <p><strong>1. 横4列のアイコンボタンを2つのコンパクトなボタンに絞り込み</strong></p>
+          <p>「カテゴリから探す」「プロ人材を探す」「求人募集を投稿する」「人材を紹介してもらう」の4つが横並びで占有していたスペースを、使用頻度の高い2つに絞ってコンパクトなボタンに変更。検索窓が最上部に強調され、画面の情報密度が下がり、ユーザーの視線を自然に検索窓へ誘導できる設計に。</p>
+        </div>
+
+        <!-- Before/After 画像 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/search_2046.png" alt="グリッドボタン廃止 Before/After">
+        </div>
+
+        <!-- Before/After 対比 -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">✕ Before（現状）</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>4つのグリッドボタンが上部を占有</li>
+              <li>ブログを探す がリスト上部に表示</li>
+              <li>検索履歴がその下に羅列</li>
+              <li>検索窓とメイン動線の優先度が視覚的に伝わらない</li>
+            </ul>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">✓ After（改善案）</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>検索窓を最上部に固定し視線を誘導</li>
+              <li>カテゴリ・プロ人材はコンパクトなボタンに変更</li>
+              <li>検索履歴を上部に、保存条件をその直下に配置</li>
+              <li>求人投稿・人材紹介・ブログは「関連サービス」として最下部に移動</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>2. 低効率な動線を「関連サービス」として下部に移動</strong></p>
+          <p>「求人募集を投稿する」（購入CVRは1%未満）・「人材を紹介してもらう」・「ブログを探す」を探すタブのメインコンテンツから外し、画面下部の関連サービスセクションに整理。必要なユーザーには引き続き届きつつ、メイン動線のノイズを削減した。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>3. 「保存した検索条件」を検索履歴の直下に配置</strong></p>
+          <p>「保存した検索条件」とは、ユーザーが設定した検索条件を保存しておける機能。再訪時に同じ条件で即検索できるため、購入意欲の高いリピートユーザーに特化した、CVRへの貢献が大きい機能だ。</p>
+          <p style="margin-top:16px;">データを見ると、CVRは全動線中最高水準。一方でCTRは約2%以下と低く見えるが、これは母数が「探すタブ表示UU全体」であるためだ。保存条件は保存済みのユーザーにのみ表示される機能のため、全体の母数で割ればCTRは自然と低くなる。つまりCTRの低さは発見性の問題ではなく、集計の構造上の特性。</p>
+          <p style="margin-top:16px;">重要なのはCVRが突出して高いという事実。保存条件を持ち・活用したユーザーは、他のどの動線より高い確率で購入に至っている。この機能をより見つけやすい位置に移動させることで、保存条件を持つユーザーの活用率が上がり、CVR最高の動線をさらに活かせると判断した。</p>
+          <p style="margin-top:16px;">配置先として「検索履歴の直下」を選んだのはユーザーの行動フローに基づく。検索履歴を確認するユーザーは「以前探したものを再検索したい」という意図を持っており、その直後に「保存した条件」が目に入ることで、より精度の高い再検索へ自然に誘導できる。</p>
+        </div>
+
+        <!-- CVR対比カード -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px; text-align:center;">
+            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 8px;">CTRが低い理由</p>
+            <p style="font-size:16px; font-weight:700; margin:0; color:#1a1a1a; line-height:1.6;">母数 = 探すタブ全表示UU<br>（保存条件あり/なし問わず）</p>
+            <p style="font-size:14px; color:#555; margin:8px 0 0;">構造上、低くなるのは当然</p>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px; text-align:center;">
+            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 8px;">CVRが示す本質</p>
+            <p style="font-size:16px; font-weight:700; margin:0; line-height:1.6;">全動線中 最高水準<br>検索窓・検索履歴を上回る</p>
+            <p style="font-size:14px; color:#aaa; margin:8px 0 0;">使ったユーザーの購入率が突出</p>
+          </div>
+        </div>
+
+        <div style="margin: 16px 60px 0;">
+          <div class="flow-callout">
+            <strong>💡 判断：</strong>CTRの低さを「見つからない問題」と短絡せず、母数の構造を正しく解釈。CVRが突出して高い事実をもとに「保存条件を持つユーザーの活用率を上げる」という配置最適化へ施策を設計した。
+          </div>
+        </div>
+
+        <!-- 検索履歴・保存条件 Before/After 画像 -->
+        <div class="project-images cols-1" style="margin-top: 32px;">
+          <img src="images/search_2049.png" alt="検索履歴・保存条件 配置改善 Before/After">
+        </div>
+
+        <!-- 改善による提供価値（3カラム） -->
+        <div style="margin: 40px 60px 0;">
+          <div class="annotation-grid">
+            <div class="annotation-item">
+              <div class="annotation-title">CVR向上</div>
+              <div class="annotation-body">低効率動線の整理により、検索→購入の流れをダイレクトに。</div>
+            </div>
+            <div class="annotation-item">
+              <div class="annotation-title">発見性の向上</div>
+              <div class="annotation-body">CVR最高の「保存条件」を目立つ位置へ配置。埋もれた機会損失を解消。</div>
+            </div>
+            <div class="annotation-item">
+              <div class="annotation-title">UXのシンプル化</div>
+              <div class="annotation-body">迷いを排除し、ユーザーが本来の目的（サービスを探す）に集中できる画面へ。</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== プロトタイプ ========== -->
+      <section class="project-section" id="prototype">
+        <h2 class="project-section-heading">プロトタイプ</h2>
+        <div class="project-text">
+          <p><strong>📱 改善後の探すタブ — インタラクションプロトタイプ</strong></p>
+          <p>動線整理・保存条件の配置最適化を反映した改善UIの操作感をFigmaプロトタイプで確認可能。</p>
+        </div>
+        <div style="margin: 24px 60px 0;">
+          <a href="https://www.figma.com/proto/BbUbqilms4tA8kx9ms4I0y/APP%E6%8E%A2%E3%81%99%E6%94%B9%E5%96%84?page-id=106%3A3966&node-id=114-24121&p=f&viewport=131%2C-136%2C0.12&t=zw250OtqmkXfmzKT-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=114%3A24121&show-proto-sidebar=1" target="_blank" rel="noopener" style="display:inline-block; background:#1a1a1a; color:#fff; border-radius:6px; padding:10px 20px; text-decoration:none; font-weight:700; margin-bottom:12px;">Figma プロトタイプはこちら ↗</a>
+          <p style="color:#aaa; margin:0 0 16px;">※プレビューは読み込みに時間がかかる場合があります🔥</p>
+          <div style="display:flex; justify-content:center;">
+            <iframe style="border:1px solid rgba(0,0,0,0.1); border-radius:8px; width:480px; height:900px;" src="https://embed.figma.com/proto/BbUbqilms4tA8kx9ms4I0y/APP%E6%8E%A2%E3%81%99%E6%94%B9%E5%96%84?page-id=106%3A3966&node-id=114-24121&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=114%3A24121&embed-host=share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 終わりに ========== -->
+      <section class="project-section" id="closing">
+        <h2 class="project-section-heading">終わりに</h2>
+
+        <div class="project-text">
+          <p><strong>🎯 削ることで価値を届ける</strong></p>
+          <p>「追加」ではなく「整理」によってユーザー体験を改善した施策。定量データを根拠に低効率動線を特定し、POへの提案・合意形成までスムーズに推進できた。「なぜ削るのか」をデータで説明できたことが、意思決定のスピードを上げた。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>💡 数値の裏にあるユーザー行動を読む</strong></p>
+          <p>「保存した検索条件」のCTRが低く見える原因が集計構造にあると正しく読み解いた上で、CVRが全動線中最高という事実に着目したのが本施策の起点。数字の表面だけでなく、なぜそのデータになるのかという構造を読むことで、正しい設計判断につながった。情報設計がいかに体験に直結するかを実感したプロジェクト。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>🧑‍💻 データと設計をつなぐ役割</strong></p>
+          <p>定量分析から競合調査・UI設計・執行会議への提案まで1人で完遂。競合各社の検索タブが共通してシンプルな構成を採用していた事実が、「削る」判断の確信につながった。執行会議でデザイン承認を取得し、ロードマップへの採択につながった。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>📌 次にやるなら：インパクト試算の設計</strong></p>
+          <p>この施策では事前のインパクト試算を設計できなかった。「保存条件のCTRがX%上がればCVRにどう影響するか」という試算があれば、優先度の根拠がより強固になり、執行会議での説得力も高まったはず。施策の仮説を定量的に語れる力を鍛えること——次のプロジェクトへの課題として持ち越している。</p>
+        </div>
+
+      </section>
+
+      <!-- ========== You may also like ========== -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-11.html" class="work-card">
+            <img src="images/2042.png" alt="Web TOP検索改善">
+            <div class="work-card-overlay">
+              <span class="work-card-title">未ログインTOP 検索導線強化PJ</span>
+              <span class="work-card-year">2026</span>
+            </div>
+          </a>
+          <a href="work-04.html" class="work-card">
+            <img src="images/04.png" alt="会員登録フロー刷新">
+            <div class="work-card-overlay">
+              <span class="work-card-title">会員登録フローを短くして購入率 6%・会員登録 11% 増加PJ</span>
+              <span class="work-card-year">2026</span>
+            </div>
+          </a>
+          <a href="work-01.html" class="work-card">
+            <img src="images/01.png" alt="電話占い新規会員登録改善">
+            <div class="work-card-overlay">
+              <span class="work-card-title">電話占いのバナーを変更＆導線追加で会員登録 40% 増加PJ</span>
+              <span class="work-card-year">2025</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>

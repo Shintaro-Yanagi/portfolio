@@ -15,7 +15,11 @@
       "Bash(/usr/bin/python3:*)",
       "Bash(npm list:*)",
       "Bash(npm install:*)",
-      "Bash(vercel --version)"
+      "Bash(vercel --version)",
+      "Bash(rsync -av --exclude='.vercel' --exclude='.git' /Users/shintaro0808/Downloads/ポートフォリオ/ /Users/shintaro0808/Downloads/portfolio/)",
+      "Read(//Users/shintaro0808/Downloads/portfolio/**)",
+      "Bash(vercel --prod)",
+      "WebFetch(domain:oharakureho.com)"
     ]
   }
 }

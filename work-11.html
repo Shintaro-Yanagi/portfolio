@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web TOP Search Improvement — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <div class="project-header">
+        <h1 class="project-title-en">Web TOP Search Entry Improvement</h1>
+        <p class="project-title-ja">未ログインTOP 検索導線強化PJ</p>
+      </div>
+
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>2026年4月〜5月</dd>
+
+        <dt>体制</dt>
+        <dd>PO 1名、PdM / デザイナー 1名（自分）、PJM 1名、エンジニア 1名</dd>
+
+        <dt>担当範囲</dt>
+        <dd>要件定義・スコープ決め、定量分析、仮説設計、UIデザイン、注目ワード選定、ABテスト設計、ステークホルダー合意形成、エンジニアへの仕様伝達</dd>
+
+        <dt>成果</dt>
+        <dd>キーワード検索CVRがカテゴリ経由の約1.4倍高いことを起点に施策化。FVの会員登録CTAを検索窓に差し替え、注目ワード6案を比較選定。ABテスト設計まで完遂し、現在計測中（6月結果予定）。</dd>
+
+        <dt>使用ツール</dt>
+        <dd>Figma／Amplitude／FigJam／Claude code／スプレッドシート</dd>
+      </dl>
+
+      <!-- ========== アイキャッチ ========== -->
+      <div class="project-hero">
+        <img src="images/2042.png" alt="PC After デザイン — 検索窓＋注目ワード">
+      </div>
+
+      <!-- ========== はじめに ========== -->
+      <section class="project-section" id="intro">
+        <h2 class="project-section-heading">はじめに</h2>
+        <div class="project-text">
+          <p>Web未ログインTOPにおいて、購入転換につながりやすいキーワード検索への導線を強化するプロジェクト。Androidアプリでの検索窓追加ABテストが好結果を示しており、Webへの展開でも購入転換を最大化できるという仮説があった。</p>
+          <p>PdM兼デザイナーとして、データによる課題定義から要件定義・スコープ決め・UI設計・ABテスト設計・エンジニアへの仕様伝達まで一貫して担当。「なぜこのUIにするのか」をデータと事業インパクトに接続しながら、チームの合意を形成しつつ推進した。</p>
+        </div>
+      </section>
+
+      <!-- ========== 目次 ========== -->
+      <section class="project-section">
+        <h2 class="project-section-heading">目次</h2>
+        <ol class="toc-list" style="margin: 0 60px;">
+          <li><span class="toc-number">01</span><a href="#overview">プロジェクトの概要</a></li>
+          <li><span class="toc-number">02</span><a href="#research">コンセプト設計の概要</a></li>
+          <li><span class="toc-number">03</span><a href="#design">コア課題の解決に向けたUI設計</a></li>
+          <li><span class="toc-number">04</span><a href="#ab">ABテスト設計</a></li>
+          <li><span class="toc-number">05</span><a href="#closing">終わりに</a></li>
+        </ol>
+      </section>
+
+      <!-- ========== プロジェクトの概要 ========== -->
+      <section class="project-section" id="overview">
+        <h2 class="project-section-heading">プロジェクトの概要</h2>
+
+        <div class="project-text">
+          <p>キーワード検索経由の購入CVRがカテゴリ経由の約1.4倍高いにもかかわらず、未ログインTOPには目立つ検索入口がなかった。Androidアプリで実施した検索窓追加ABテストが良好な結果を示しており、Webへの展開で購入転換を最大化できるという仮説を立てた。</p>
+          <p>現状FVは会員登録導線がメインだったが、全体の会員登録の母数を見ると効果は限定的な状態だった。これを根拠に、FVの会員登録CTAを検索窓に差し替える方針を決定。</p>
+        </div>
+
+        <!-- コンセプト subsection -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>📍 コンセプト</strong></p>
+          <p>未ログインユーザーが訪問直後に「探してみたい」と思えるTOPページ。検索窓をただ置くのではなく、何を探せるか・どんなキーワードで探せばよいかを直感的に理解できる状態を目指した。</p>
+        </div>
+
+        <!-- コンセプト画像 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/11-concept.png" alt="コンセプト設計フロー">
+        </div>
+
+        <!-- プロトタイプ -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>▶ プロトタイプ</strong></p>
+        </div>
+
+        <!-- PC プロトタイプ -->
+        <div style="margin: 24px 60px 0;">
+          <p style="font-weight:700; margin:0 0 12px;">💻 PC</p>
+          <a href="https://www.figma.com/proto/858SlymUalX6dmbFdXiwNp/Web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E6%A4%9C%E7%B4%A2%E6%94%B9%E5%96%84?page-id=1602%3A2665&node-id=2281-593&viewport=-298%2C92%2C0.21&t=rpnI8VFDgdKDsG6b-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2281%3A593&show-proto-sidebar=1" target="_blank" rel="noopener" style="display:inline-block; background:#1a1a1a; color:#fff; border-radius:6px; padding:10px 20px; text-decoration:none; font-weight:700; margin-bottom:12px;">Figma プロトタイプはこちら ↗</a>
+          <p style="color:#aaa; margin:0 0 16px;">※プレビューは読み込みに時間がかかる場合があります🔥</p>
+          <iframe style="border:1px solid rgba(0,0,0,0.1); border-radius:8px; width:100%; height:760px;" src="https://embed.figma.com/proto/858SlymUalX6dmbFdXiwNp/Web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E6%A4%9C%E7%B4%A2%E6%94%B9%E5%96%84?page-id=1602%3A2665&node-id=2281-593&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2281%3A593&embed-host=share" allowfullscreen></iframe>
+        </div>
+
+        <!-- SP プロトタイプ -->
+        <div style="margin: 48px 60px 0;">
+          <p style="font-weight:700; margin:0 0 12px;">📱 SP</p>
+          <a href="https://www.figma.com/proto/858SlymUalX6dmbFdXiwNp/Web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E6%A4%9C%E7%B4%A2%E6%94%B9%E5%96%84?page-id=1602%3A2665&node-id=1975-1332&viewport=-298%2C92%2C0.21&t=rpnI8VFDgdKDsG6b-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1975%3A1332&show-proto-sidebar=1" target="_blank" rel="noopener" style="display:inline-block; background:#1a1a1a; color:#fff; border-radius:6px; padding:10px 20px; text-decoration:none; font-weight:700; margin-bottom:12px;">Figma プロトタイプはこちら ↗</a>
+          <p style="color:#aaa; margin:0 0 16px;">※プレビューは読み込みに時間がかかる場合があります🔥</p>
+          <div style="display:flex; justify-content:center;">
+            <iframe style="border:1px solid rgba(0,0,0,0.1); border-radius:8px; width:480px; height:900px;" src="https://embed.figma.com/proto/858SlymUalX6dmbFdXiwNp/Web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E6%A4%9C%E7%B4%A2%E6%94%B9%E5%96%84?page-id=1602%3A2665&node-id=1975-1332&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1975%3A1332&embed-host=share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- デザインプロセス subsection -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>🧑‍💻 デザインプロセスをPdM兼デザイナーとして一貫してリード</strong></p>
+          <p>施策の妥当性整理からUI設計・エンジニアへの仕様伝達・ABテスト設計まで一貫して担当。特に意識したのは、UI変更の理由を感覚ではなくデータと事業インパクトに接続し、PO・エンジニア・DAチームと合意を形成しながら推進すること。</p>
+        </div>
+
+        <!-- プロセス図 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/11-process.png" alt="デザインプロセス概要">
+        </div>
+
+      </section>
+
+      <!-- ========== コンセプト設計の概要 ========== -->
+      <section class="project-section" id="research">
+        <h2 class="project-section-heading">コンセプト設計の概要</h2>
+
+        <div class="project-text">
+          <p><strong>1. 定量データから検索導線の改善余地を整理</strong></p>
+          <p>キーワード検索経由の購入CVRはカテゴリ経由の検索より約1.4倍高い。しかし未ログインTOPには目立つ検索入口がなく、検索行動が購入転換に直結しやすいにもかかわらず、その入口に誘導できていない状態だった。未ログTOPで検索導線を強化することで、検索の利用率を上げることで購入数増やす狙いで施策を進めた。</p>
+        </div>
+
+        <!-- 課題整理図 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/11-kadai.png" alt="データから見えた検索導線の課題">
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>2. 元々は会員登録を訴求していたので、そこの効果を測定</strong></p>
+          <p>TOPのFVにある会員登録CTAバナーの登録貢献度を確認したところ、PCではヘッダー経由と比較してバナー経由は限定的な状態だった。FVのスペースは会員登録には十分機能しておらず、より購入CVRへの貢献が高い検索窓に転換する余地があると判断。FV内の会員登録CTAを検索窓に差し替える方針を決定した。</p>
+          <p>一方でSPではヒーローやバナーがファーストビュー内でサービス理解を促す役割も担っていたため、SPではヒーロー訴求を維持しながら検索窓をヒーロー直下に追加する方針とした。会員登録機会の損失リスクはガードレール指標として継続監視することにした。</p>
+        </div>
+
+        <!-- PC vs SP 方針対比 -->
+        <div style=" margin:24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 12px; font-size:16px;">💻 PC</p>
+            <p style="margin:0 0 16px;">FVバナー経由の登録貢献は<strong>ヘッダー経由と比較して限定的</strong></p>
+            <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:12px 16px;">
+              <p style="font-weight:700; margin:0 0 4px;">→ 方針</p>
+              <p style="margin:0;">FVのCTAを<strong>検索窓に差し替え</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>3. 競合調査から未ログTOPの検索訴求パターンを整理</strong></p>
+          <p>他社マーケットプレイスのFVを確認したところ、多くが未ログイン状態でも検索窓や注目キーワードをFVに配置していた。パーソナライズが効きにくい未ログイン状態では「何を探せるか」をTOPで明示し、能動的な探索行動を促すことが有効だと判断した。</p>
+        </div>
+
+        <!-- 競合共通パターン -->
+        <div style="background:#f5f5f5; border-radius:8px; padding:24px; margin: 24px 60px 0;">
+          <p style="font-weight:700; margin:0 0 16px;">競合に共通するFVパターン</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">FVに検索窓を配置</span>
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">注目キーワードを表示</span>
+            <span style="background:#1a1a1a; color:#fff; border-radius:20px; padding:8px 20px; font-size:16px; font-weight:700;">未ログイン状態でも探索を促す</span>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== コア課題の解決に向けたUI設計 ========== -->
+      <section class="project-section" id="design">
+        <h2 class="project-section-heading">コア課題の解決に向けたUI設計</h2>
+
+        <div class="project-text">
+          <p><strong>1. FVの会員登録CTAを検索窓に差し替え</strong></p>
+          <p>FVでは、会員登録CTAバナーの登録貢献が限定的なことを確認済みだったため、そのスペースを検索窓に差し替えた。ブランディング訴求と既存の会員登録導線（ヘッダー）は維持したまま、購入CVRに直結する検索行動をFVから促せる状態に設計。</p>
+        </div>
+
+        <!-- PC Before/After比較 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/1.png" alt="PC Before / After 比較">
+        </div>
+
+        <!-- SP Before/After比較 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/2.png" alt="SP Before / After 比較">
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>2. 注目ワードの設計意図</strong></p>
+          <p>検索窓の下に注目ワードをチップ形式で配置。意図は単なる「人気キーワード提示」ではなく、ユーザーが「こんなことも頼めるんだ」という期待感を高めること。特に初訪問の未ログインユーザーが、サービスのカバー領域を直感的に把握できることを重視した。何を検索すればよいかわからないユーザーにも、タップするだけで探索を始められる導線を設計した。</p>
+        </div>
+
+        <!-- NG/OK 対比 -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="color:#aaa; font-weight:700; margin:0 0 12px;">❌ やらないこと</p>
+            <p style="font-weight:700; margin:0 0 12px;">単なる人気キーワード提示</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>取引数・人気順で機械的に選定</li>
+              <li>特定カテゴリに偏りやすい</li>
+              <li>「何を頼めるか」が伝わらない</li>
+            </ul>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px;">
+            <p style="color:#aaa; font-weight:700; margin:0 0 12px;">✅ めざすこと</p>
+            <p style="font-weight:700; margin:0 0 12px;">期待感を高めるキーワード設計</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>サービス全体のカバー感が伝わる</li>
+              <li>初訪問ユーザーが興味を持てる</li>
+              <li>タップするだけで探索を始められる</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>3. 注目ワード6案の比較選定</strong></p>
+          <p>ログイン済み・未ログイン別にTOP100キーワードを全件抽出。各ワードにCVR・GMV・取引数・成長率を紐付けたうえで、「何を最適化するか」という目的軸を変えた場合に選ばれるワードがどう変わるかを6アプローチで比較した。</p>
+        </div>
+
+        <!-- 6アプローチ比較 -->
+        <div style="margin: 24px 60px 0;">
+          <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:16px; line-height:1.6;">
+              <thead>
+                <tr>
+                  <th style="padding:12px 16px; text-align:left; font-weight:700; border-bottom:2px solid #1a1a1a; white-space:nowrap;">アプローチ</th>
+                  <th style="padding:12px 16px; text-align:left; font-weight:700; border-bottom:2px solid #1a1a1a;">最適化目標</th>
+                  <th style="padding:12px 16px; text-align:left; font-weight:700; border-bottom:2px solid #1a1a1a;">選ばれるワード例</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:#1a1a1a; color:#fff;">
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #333; white-space:nowrap;">① カテゴリ代表型 ★採用</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #333;">サービス全体のカバー感を伝える</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #333;">ロゴ / LP制作 / 加工 / 動画編集 / インテリアコーディネーター</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #e0e0e0; white-space:nowrap;">② 取引数重視型</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">需要実績・人気の高さ</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">イラスト / 加工 / ロゴ / 看板 / ブラシ</td>
+                </tr>
+                <tr style="background:#f9f9f9;">
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #e0e0e0; white-space:nowrap;">③ 希少性×高CVR型</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">発見と購入転換率の両立</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">インスタ / 立ち絵 / ショート動画 / 歌ってみたMV / 加工 著作</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #e0e0e0; white-space:nowrap;">④ 検索数シンプル上位型</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">絶対的なボリューム・認知</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">インテリアコーディネーター / VTuber / イラスト / 立ち絵 / 加工</td>
+                </tr>
+                <tr style="background:#f9f9f9;">
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #e0e0e0; white-space:nowrap;">⑤ GMV×CVR効率型</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">収益インパクトの最大化</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">VTuber / ロゴ / イラスト / LP / 看板デザイン</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px; font-weight:700; border-bottom:1px solid #e0e0e0; white-space:nowrap;">⑥ 急上昇型</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">トレンドの先取り</td>
+                  <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;">AIデータ作成 / VR Chat / Vyond / 古物商 / 縫製</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="background:#f5f5f5; border-radius:8px; padding:16px 24px; margin-top:16px;">
+            <p style="margin:0;"><strong>採用の根拠：</strong>目的は「初訪問の未ログインユーザーにサービス全体のカバー感を伝えること」。大カテゴリごとに代表ワードを1つ選ぶことで、特定ジャンルへの偏りを防ぎながら「自分が探しているものがある」という期待感を幅広く担保できると判断した。</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== ABテスト設計 ========== -->
+      <section class="project-section" id="ab">
+        <h2 class="project-section-heading">ABテスト設計</h2>
+
+        <div class="project-text">
+          <p><strong>1. メインKPIは購入CVRではなく検索利用率</strong></p>
+          <p>今回の施策が直接介入できる範囲は「TOPから検索行動へ移るかどうか」。購入CVRは検索結果・サービス詳細・注文導線など下流ファネルの影響を受けるため、検索窓追加の効果だけを切り出して判断しづらい。そのため検索利用率をメインKPIに置き、会員登録率と購入CVRはガードレールとして監視する設計にした。</p>
+          <p>ABテスト設計はDAチームのサポートを受けながら整理。対象は未ログインユーザーのみとし、効果が確認できればログイン済みへの展開も検討できる状態に整えた。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>2. エンジニアとの仕様合意</strong></p>
+          <p>ABテストの実装にあたり、コンポーネントの使い方や出し分けロジックについてエンジニアと認識齟齬が生じやすい箇所を事前に特定。FigmaとFigJamで仕様を視覚的に整理した上で、疑問点はMTGやSlackでその都度解消しながら進めた。設計の意図が正確に実装に反映されるよう、デザイナーとPdMの両視点から仕様伝達をリードした。</p>
+        </div>
+
+      </section>
+
+      <!-- ========== 終わりに ========== -->
+      <section class="project-section" id="closing">
+        <h2 class="project-section-heading">終わりに</h2>
+        <div class="project-text">
+          <p><strong>🎯 データを根拠に、チームを動かす</strong></p>
+          <p>このプロジェクトで意識したのは、「検索窓を追加する」という施策を感覚で進めるのではなく、データから課題を定義し、意思決定の根拠をチーム全員が納得できる形で整理すること。FVの会員登録CTAを差し替えるという踏み込んだ判断も、登録貢献の定量確認があったからこそPOやエンジニアへの合意形成がスムーズに進んだ。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>💬 ユーザーの感情を設計の軸に置く</strong></p>
+          <p>注目ワードの選定では、数字だけで決めず「初訪問ユーザーが感じる期待感」という定性軸を合わせて評価したことで、6案の比較に意味が生まれた。データと定性の両軸で判断する視点が鍛えられた。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>🧑‍💻 PdM兼デザイナーとして得た視点</strong></p>
+          <p>UIを整えるだけではなく、なぜそのUIにするのかをデータ・事業インパクト・UX観点から組み立て、チームに伝え、合意を形成しながら推進する力を磨けたプロジェクトだった。エンジニアとの仕様連携を通じて、デザインの意図を正確に実装に落とし込むためのコミュニケーション設計の重要性も改めて実感した。6月に結果が出た際には、数値をもとにさらに考察を深めていきたい。</p>
+        </div>
+      </section>
+
+      <!-- ========== You may also like ========== -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-04.html" class="work-card">
+            <img src="images/04.png" alt="会員登録フロー刷新">
+            <div class="work-card-overlay">
+              <span class="work-card-title">会員登録フローを短くして購入率 6%・会員登録 11% 増加PJ</span>
+              <span class="work-card-year">2026</span>
+            </div>
+          </a>
+          <a href="work-01.html" class="work-card">
+            <img src="images/01.png" alt="電話占い新規会員登録改善">
+            <div class="work-card-overlay">
+              <span class="work-card-title">電話占いのバナーを変更＆導線追加で会員登録 40% 増加PJ</span>
+              <span class="work-card-year">2025</span>
+            </div>
+          </a>
+          <a href="work-03.html" class="work-card">
+            <img src="images/03.png" alt="生成AI活用推進">
+            <div class="work-card-overlay">
+              <span class="work-card-title">デザインチームの生成AI活用推進PJ</span>
+              <span class="work-card-year">2025</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>

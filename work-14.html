@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script>if(!localStorage.getItem('portfolio_auth'))window.location.replace('password.html');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Studio Analytics Design — Shintaro Yanagi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="active">Work</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <div class="project-page">
+
+      <!-- ========== ヘッダー ========== -->
+      <div class="project-header">
+        <h1 class="project-title-en">利用状況・生産性の可視化・会話履歴 3画面設計</h1>
+        <p class="project-title-ja">AI Studio Analytics Design</p>
+      </div>
+
+      <!-- ========== メタ ========== -->
+      <dl class="project-meta">
+        <dt>期間</dt>
+        <dd>2025年4月〜5月</dd>
+
+        <dt>体制</dt>
+        <dd>事業責任者 1名、エンジニア 3名、デザイナー 1名（自分）</dd>
+
+        <dt>担当範囲</dt>
+        <dd>ユーザーインタビュー設計・実施、競合調査、要件定義、UI設計</dd>
+
+        <dt>成果</dt>
+        <dd>ユーザーインタビューを経てスコープを3画面へ拡張。リリース後、本機能が受注の決め手となった案件が生まれた。</dd>
+
+        <dt>使用ツール</dt>
+        <dd>Figma／FigJam</dd>
+      </dl>
+
+      <!-- ========== ヒーロー ========== -->
+      <div class="project-hero">
+        <img src="images/AI02.png" alt="AI Studio Analytics — 利用状況・生産性の可視化・会話履歴 3画面">
+      </div>
+
+      <!-- ========== はじめに ========== -->
+      <section class="project-section" id="intro">
+        <h2 class="project-section-heading">はじめに</h2>
+        <div class="project-text">
+          <p>ココナラ AIスタジオは、企業がAIを業務に活用するための法人向けプロダクトです。当初、管理画面として作る予定だったのは「利用状況の確認」だけ、シンプルなスコープでプロジェクトがスタートしました。</p>
+          <p style="margin-top:16px;">しかし、エンタープライズ企業のDX担当者・部長・役員へのユーザーインタビューを重ねるうちに、管理者が本当に必要としていたのは「使っているかどうか」の確認ではなく、「どれだけ効果が出ているか」の証明と「誰がどう使っているか」の把握だということが明らかになりました。</p>
+          <p style="margin-top:16px;">この発見をもとに、利用状況・生産性の可視化・会話履歴の3画面構成へとスコープを再定義。本ページでは、ユーザーインタビューから設計判断に至るまでのプロセスをご紹介します。</p>
+        </div>
+      </section>
+
+      <!-- ========== 目次 ========== -->
+      <section class="project-section">
+        <h2 class="project-section-heading">目次</h2>
+        <ol class="toc-list" style="margin: 0 60px;">
+          <li><span class="toc-number">01</span><a href="#overview">プロジェクトの概要</a></li>
+          <li><span class="toc-number">02</span><a href="#process-lead">デザインプロセス</a></li>
+          <li><span class="toc-number">03</span><a href="#concept">コンセプト設計の概要</a></li>
+          <li><span class="toc-number">04</span><a href="#design">コア課題の解決に向けたUI設計</a></li>
+          <li><span class="toc-number">05</span><a href="#prototype">プロトタイプ</a></li>
+          <li><span class="toc-number">06</span><a href="#closing">終わりに</a></li>
+        </ol>
+      </section>
+
+      <!-- ========== プロジェクトの概要 ========== -->
+      <section class="project-section" id="overview">
+        <h2 class="project-section-heading">プロジェクトの概要</h2>
+
+        <!-- コンセプト callout -->
+        <div style="margin: 0 60px;">
+          <div style="background: #f5f5f5; border-radius: 12px; padding: 32px 36px;">
+            <p style="font-weight: 700; font-size: 16px; color: #1a1a1a; margin: 0 0 12px;">コンセプト</p>
+            <p style="font-size: 16px; font-style: italic; color: #333; margin: 0; line-height: 1.8;">AIスタジオの活用状況と生産性インパクトを定量的に可視化し、管理者が社内展開・ROI提示を自信を持って行える管理機能を設計する。</p>
+          </div>
+        </div>
+
+        <!-- 課題→解決策→ゴール図 -->
+        <div class="project-images cols-1" style="margin-top: 32px;">
+          <img src="images/f62cb4ad-955f-475d-ae34-b3da5850fc06.png" alt="課題・解決策・ゴール">
+        </div>
+
+        <!-- プロセス図 3ステップ -->
+        <div style="margin: 40px 60px 0;">
+          <div style="display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: stretch; gap: 0;">
+
+            <!-- STEP 01 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+              <div style="background: #1a1a1a; padding: 12px 20px; text-align: center;">
+                <span style="color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.05em;">STEP 01</span>
+              </div>
+              <div style="padding: 20px;">
+                <p style="color: #1a1a1a; font-weight: 700; font-size: 15px; margin: 0 0 10px;">ユーザーインタビュー</p>
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.7;">エンタープライズ企業のDX担当者・部長・役員10名にビザスク経由でインタビューを実施。管理者が本当に必要とするデータを特定。</p>
+              </div>
+            </div>
+
+            <!-- 矢印 -->
+            <div style="display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 22px;">→</div>
+
+            <!-- STEP 02 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+              <div style="background: #1a1a1a; padding: 12px 20px; text-align: center;">
+                <span style="color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.05em;">STEP 02</span>
+              </div>
+              <div style="padding: 20px;">
+                <p style="color: #1a1a1a; font-weight: 700; font-size: 15px; margin: 0 0 10px;">競合調査</p>
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.7;">他社AI活用ツールの管理ダッシュボードUIを調査し、業界標準の表示パターンと独自設計のポイントを整理。</p>
+              </div>
+            </div>
+
+            <!-- 矢印 -->
+            <div style="display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 22px;">→</div>
+
+            <!-- STEP 03 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+              <div style="background: #1a1a1a; padding: 12px 20px; text-align: center;">
+                <span style="color: #fff; font-weight: 700; font-size: 14px; letter-spacing: 0.05em;">STEP 03</span>
+              </div>
+              <div style="padding: 20px;">
+                <p style="color: #1a1a1a; font-weight: 700; font-size: 15px; margin: 0 0 10px;">UI設計</p>
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.7;">インタビューと競合調査の知見をもとに3画面のUI設計を実施。各画面の情報設計・算出ロジックまで担当。</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </section>
+
+      <!-- ========== デザインプロセスリード ========== -->
+      <section class="project-section" id="process-lead">
+        <h2 class="project-section-heading">🧑‍💻 デザインプロセスを一貫してリード</h2>
+        <div class="project-text">
+          <p>〜1人デザイナーとして提案から実行まで担当〜</p>
+          <p style="margin-top:16px;">エンジニア中心のチームに1人デザイナーとしてアサイン。ユーザーインタビューの設計・実施から競合調査、要件定義、UI設計まで一貫して担当。インタビューで得た知見をチーム全体の共通認識にしながら、スコープの再定義と設計判断を主導しました。</p>
+        </div>
+
+        <!-- デザインプロセス4象限 -->
+        <div class="project-images cols-1" style="margin-top: 32px;">
+          <img src="images/384ef688-d342-47a2-874b-b61f99bc4e7d.png" alt="デザインプロセスを一貫してリード — 1人デザイナーとして提案から実行まで担当">
+        </div>
+
+        <div style="margin: 32px 60px 0;">
+          <div class="flow-callout">
+            <strong>💡 ユーザーインタビューの結果をもとにスコープを再定義。「1画面→3画面」への拡張をデータドリブンで判断し、チームを説得しながら推進した。</strong>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== コンセプト設計の概要 ========== -->
+      <section class="project-section" id="concept">
+        <h2 class="project-section-heading">コンセプト設計の概要</h2>
+
+        <!-- 1. ユーザーインタビュー -->
+        <div class="project-text">
+          <p><strong>1. ユーザーインタビューで「管理者が本当に見たいデータ」を特定</strong></p>
+          <p>メーカー・製造・食品・自動車・医療など複数業界の大手企業に対し、DX担当者・部長・役員を対象としたユーザーインタビューをビザスク経由で実施（計10名）。AIスタジオの導入を判断する立場の方々が、「何を根拠に導入を決め、導入後に何を見たいのか」を深掘りすることが目的です。</p>
+          <p style="margin-top:16px;">商談の場では聞けない本音——意思決定の基準、業務の実態、ROIへの期待——を引き出すことで、管理画面に本当に必要な情報を定義しました。</p>
+        </div>
+
+        <!-- ペルソナ・課題・理想状態図 -->
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/7762e7b3-19b1-4f2f-ada2-0cacbe6d16d5.png" alt="提供価値 — ペルソナ・達成を拒む要因・解決策・理想の状態">
+        </div>
+
+        <!-- インタビューニーズ 3つ -->
+        <div style="margin: 32px 60px 0; display: flex; flex-direction: column; gap: 24px;">
+
+          <!-- ニーズ① -->
+          <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+            <div style="background: #f5f5f5; padding: 14px 24px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 4px 12px; border-radius: 20px;">発見されたニーズ①</span>
+              <span style="font-weight: 700; font-size: 15px; color: #1a1a1a;">「効果を数字で証明してほしい」</span>
+            </div>
+            <div style="padding: 20px 24px;">
+              <p style="color: #333; font-size: 14px; margin: 0 0 16px; line-height: 1.8;">インタビューを通じて最も多く挙がったのが、「感覚ではなく定量的なデータで効果を見たい」という声でした。大企業では、AI活用ツールの導入継続・予算追加には役員への報告が必要となります。「なんとなく便利」では稟議が通らず、「何時間削減できたか」という具体的な数字が求められていました。</p>
+              <div style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px;">
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8; font-style: italic;">「導入して便利だとは思うけど、実際どれだけ時間が削減できているか数字で示せないと、上への説明が難しい。」</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ニーズ② -->
+          <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+            <div style="background: #f5f5f5; padding: 14px 24px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 4px 12px; border-radius: 20px;">発見されたニーズ②</span>
+              <span style="font-weight: 700; font-size: 15px; color: #1a1a1a;">「誰がどう使っているかを把握・横展開したい」</span>
+            </div>
+            <div style="padding: 20px 24px;">
+              <p style="color: #333; font-size: 14px; margin: 0 0 16px; line-height: 1.8;">活用が進んでいるユーザーが社内に存在する一方で、ほとんど使っていないユーザーも多いという課題がありました。「よく使っているメンバーがどんな使い方をしているかを知り、社内全体に展開したい」というニーズが複数の管理者から挙がりました。</p>
+              <div style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px;">
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8; font-style: italic;">「使い倒している人とほとんど触っていない人の差が激しい。うまく使っている人の方法を、チーム全体に広めたい。」</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ニーズ③ -->
+          <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+            <div style="background: #f5f5f5; padding: 14px 24px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 4px 12px; border-radius: 20px;">発見されたニーズ③</span>
+              <span style="font-weight: 700; font-size: 15px; color: #1a1a1a;">「役員・上司への提案資料として使いたい」</span>
+            </div>
+            <div style="padding: 20px 24px;">
+              <p style="color: #333; font-size: 14px; margin: 0 0 16px; line-height: 1.8;">DX担当者・部長層が共通して抱えていたのが、「上へのROI説明」という課題です。AI活用ツールへの投資継続・追加導入の稟議には、定量的な効果提示が必須。管理画面そのものを役員プレゼンのスライドとして使えるレベルの可視化が求められていました。</p>
+              <div style="background: #f5f5f5; padding: 14px 18px; border-radius: 6px;">
+                <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8; font-style: italic;">「月次の生産性レポートをそのまま役員会議に持っていける形になっていると、導入推進者として非常に助かる。」</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin: 32px 60px 0;">
+          <div class="flow-callout">
+            <strong>💡 判断：「利用状況の確認」だけでは管理者のニーズを満たせない。生産性の定量証明・活用事例の把握・レポート出力の3機能がセットで必要だと判断し、3画面構成へスコープを拡張した。</strong>
+          </div>
+        </div>
+
+        <!-- 2. 競合調査 -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>2. 競合調査から管理ダッシュボードの設計パターンを整理</strong></p>
+          <p>他社AI活用ツール・SaaSプロダクトの管理ダッシュボードを複数調査し、業界標準の設計パターンを把握しました。</p>
+        </div>
+
+
+        <!-- 3. 生産性削減時間の算出ロジック -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>3. 生産性削減時間の算出ロジックを設計</strong></p>
+          <p>「どれだけ時間を削減できたか」を数字で示すためには、算出ロジックの設計が必要でした。チャットの会話内容をAIがカテゴリ（要約・原稿・調査・アイデア出しなど）に自動分類し、カテゴリごとに設定された「従来の所要時間」と「AI使用後の所要時間」の差分に利用回数を掛けて算出します。</p>
+        </div>
+
+        <!-- 算出ロジック図 -->
+        <div style="margin: 32px 60px 0; background: #f5f5f5; border-radius: 12px; padding: 32px 36px;">
+
+          <p style="font-weight: 700; font-size: 16px; margin: 0 0 20px; color: #1a1a1a;">削減時間の算出式</p>
+
+          <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 24px 28px; text-align: center; margin-bottom: 24px;">
+            <p style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin: 0; line-height: 1.8;">削減時間（分）＝（従来の所要時間 − AI使用後の時間）× 利用回数</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px 24px;">
+              <p style="font-weight: 700; font-size: 14px; color: #1a1a1a; margin: 0 0 8px;">計算例：調査カテゴリ</p>
+              <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.8;">従来60分 → AI使用後10分<br>10回利用 → <strong>500分削減</strong></p>
+            </div>
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px 24px;">
+              <p style="font-weight: 700; font-size: 14px; color: #1a1a1a; margin: 0 0 8px;">カスタマイズ対応</p>
+              <p style="font-size: 14px; color: #333; margin: 0; line-height: 1.8;">デフォルト値を設定しつつ、企業ごとに所要時間をカスタマイズ可能。業種・業務の実態に合わせた精度の高い算出を実現。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ========== コア課題の解決に向けたUI設計 ========== -->
+      <section class="project-section" id="design">
+        <h2 class="project-section-heading">コア課題の解決に向けたUI設計</h2>
+
+        <!-- 課題→解決策 2×2グリッド -->
+        <div style="margin: 0 60px;">
+          <h3 style="font-size: 18px; font-weight: 700; color: #1a1a1a; margin: 0 0 24px;">コア課題から解決策を検討</h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+            <!-- 課題1 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px 28px 32px; position: relative;">
+              <span style="display: inline-block; background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px;">課題1</span>
+              <p style="color: #1a1a1a; font-weight: 700; font-size: 18px; margin: 0 0 14px; line-height: 1.5;">AI活用の効果を<br>数字で証明できない…</p>
+              <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8;">AIを導入していても「生産性が上がった」と定量的に示せない。役員への報告・稟議の場で根拠を持てず、次フェーズへの全社展開の意思決定が止まってしまう。</p>
+            </div>
+
+            <!-- 解決策1 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px 28px 32px;">
+              <span style="display: inline-block; background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px;">解決策1</span>
+              <p style="color: #1a1a1a; font-weight: 700; font-size: 18px; margin: 0 0 14px; line-height: 1.5;">生産性の可視化ダッシュボード設計</p>
+              <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8;">業務削減時間をカテゴリ別・ユーザー別に定量表示。月次レポートをそのまま役員プレゼンに活用できる形式で設計し、ROI証明の手間をゼロに。</p>
+            </div>
+
+            <!-- 課題2 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px 28px 32px;">
+              <span style="display: inline-block; background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px;">課題2</span>
+              <p style="color: #1a1a1a; font-weight: 700; font-size: 18px; margin: 0 0 14px; line-height: 1.5;">誰がどんな使い方を<br>しているか把握できない…</p>
+              <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8;">活用が進んでいる部門と止まっている部門の差が大きいが、管理者には見えない。よく使っているメンバーの事例を組織全体に横展開できない。</p>
+            </div>
+
+            <!-- 解決策2 -->
+            <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 28px 28px 32px;">
+              <span style="display: inline-block; background: #1a1a1a; color: #fff; font-weight: 700; font-size: 14px; padding: 5px 14px; border-radius: 4px; margin-bottom: 16px;">解決策2</span>
+              <p style="color: #1a1a1a; font-weight: 700; font-size: 18px; margin: 0 0 14px; line-height: 1.5;">利用状況・会話履歴の可視化設計</p>
+              <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.8;">ユーザー別・グループ別の利用状況を一覧化。会話履歴でよく使っているメンバーの用途を把握し、社内Slackや研修での活用事例共有をスムーズに。</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="margin-top: 56px;">
+
+        <!-- 1. 利用状況 -->
+        <div class="project-text">
+          <p><strong>1. 利用状況画面——「誰が・いつ・どれだけ使っているか」を一目で把握</strong></p>
+          <p>KPIとして生成回数・利用人数を最上部に配置し、先月比の増減率も合わせて表示することで、管理者がトレンドを瞬時に把握できる設計にしました。日次グラフでは生成回数と利用人数の推移を重ねて表示し、利用が集中している日や落ち込んでいる期間を視覚的に確認できます。</p>
+          <p style="margin-top:16px;">各ユーザーの生成回数・利用テンプレート数を一覧で表示することで、「よく使っているメンバー」「ほとんど使っていないメンバー」を管理者が即座に把握。グループ・期間のフィルタリング機能も備え、部門単位・月単位での細かいモニタリングに対応しました。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/2048.png" alt="利用状況画面">
+        </div>
+
+        <!-- 2. 生産性の可視化 -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>2. 生産性の可視化画面——「本当に効果が出ているか」を定量的に証明</strong></p>
+          <p>インタビューで最も強く求められていた「効果の定量証明」に応えるための核となる画面です。月間の業務削減時間を総量で大きく表示し、カテゴリ別・ユーザー別の内訳をグラフとテーブルで確認できる構成にしました。</p>
+          <p style="margin-top:16px;">カテゴリ別の削減時間では、どの業務でAIが最も貢献しているかを把握できるため、社内への活用推進のアクションに直結します。また、ユーザー別の削減時間ランキングにより、活用度の高いメンバーを特定し、会話履歴との連携で事例横展開をスムーズに行える設計にしました。</p>
+          <p style="margin-top:16px;">この画面の数値をそのまま役員プレゼン・稟議資料に転用できることを意識し、シンプルで読み取りやすいレイアウトを優先しました。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/2049.png" alt="生産性の可視化画面">
+        </div>
+
+        <!-- 3. 会話履歴 -->
+        <div class="project-text" style="margin-top: 56px;">
+          <p><strong>3. 会話履歴画面——「誰がいつどんな使い方をしているか」を把握・展開</strong></p>
+          <p>活用事例の横展開を実現するための画面です。送信日時・ユーザー・カテゴリ・利用テンプレート・会話内容をリスト形式で表示し、管理者が特定ユーザーの利用パターンを素早く把握できます。</p>
+          <p style="margin-top:16px;">ユーザー名・グループ・カテゴリ・期間でのフィルタリング機能を搭載し、「よく使っているメンバーがどんな質問・用途で活用しているか」を具体的に確認できる設計にしました。優秀な使い方を社内Slackや研修で共有する際の一次情報源として機能します。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/2050.png" alt="会話履歴画面">
+        </div>
+
+        </div><!-- /margin-top:56px -->
+
+      </section>
+
+      <!-- ========== プロトタイプ ========== -->
+      <section class="project-section" id="prototype">
+        <h2 class="project-section-heading">プロトタイプ</h2>
+
+        <div class="project-text">
+          <p><strong>💻 利用状況・生産性の可視化・会話履歴 — 3画面のインタラクションプロトタイプ</strong></p>
+          <p>実際の画面遷移・フィルタリング操作・ナビゲーションの動きをFigmaプロトタイプでご確認いただけます。</p>
+        </div>
+
+        <div style="margin: 24px 60px 0;">
+          <iframe
+            style="border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; display: block; width: 100%;"
+            height="600"
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FNdSHpwBGZIUHLx6QsZklfZ%2F%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%A9%E2%80%A8AI%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA-%E2%80%A8%E6%B3%95%E4%BA%BA%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88-%E6%9C%AA%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9-%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%3Fnode-id%3D90-27439%26viewport%3D-1886%2C-301%2C0.17%26t%3D6MnoG2jYYaHMWwcb-1%26scaling%3Dmin-zoom%26content-scaling%3Dfixed%26starting-point-node-id%3D90%3A27439%26page-id%3D90%3A24301"
+            allowfullscreen>
+          </iframe>
+          <div style="margin-top: 12px; text-align: right;">
+            <a href="https://www.figma.com/proto/NdSHpwBGZIUHLx6QsZklfZ/%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%A9%E2%80%A8AI%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA-%E2%80%A8%E6%B3%95%E4%BA%BA%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88-%E6%9C%AA%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9-%E6%A4%9C%E8%A8%8E%E4%B8%AD%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF?node-id=90-27439&viewport=-1886%2C-301%2C0.17&t=6MnoG2jYYaHMWwcb-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=90%3A27439&page-id=90%3A24301" target="_blank" rel="noopener" style="color:#555; font-size:13px; text-decoration:none;">別タブで開く ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 終わりに ========== -->
+      <section class="project-section" id="closing">
+        <h2 class="project-section-heading">終わりに</h2>
+
+        <div class="project-text">
+          <p><strong>🎯 インタビューがスコープを変えた</strong></p>
+          <p>「利用状況だけ作ればいい」というスコープから出発し、ユーザーインタビューの知見をもとに3画面へ拡張する判断をしました。「なんとなく必要そう」ではなく、管理者が置かれた状況（役員への説明責任、社内展開の障壁）を具体的に理解したことで、何を作るべきかが明確になりました。デザイナーがリサーチを担い、設計の方向性を定義するプロセスの価値を実感したプロジェクトです。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>💬 「証明できないと続けられない」という現実</strong></p>
+          <p>インタビューを通じて印象的だったのは、どの企業の管理者も「効果を示せないと投資継続の判断が下りない」という同じ壁を抱えていたことです。プロダクトの機能を作るだけでなく、「価値を証明する仕組み」を設計することが、エンタープライズ向けSaaSにとっていかに重要かを学びました。削減時間の算出ロジック設計を通じて、UXデザインの範囲を超えてビジネスロジックにまで踏み込む経験ができました。</p>
+        </div>
+
+        <div class="project-text" style="margin-top: 32px;">
+          <p><strong>🧑‍💻 受注につながった手触り感</strong></p>
+          <p>リリース後、本機能が導入の決め手となった受注案件が生まれました。自分の設計が商談の場で実際に機能し、事業数字に直結したという手触り感は、デザイナーとしての自分を大きく動機づける経験になりました。上流から関わり、データと設計をつなぐ役割を担い続けたいという気持ちが、一層強くなりました。</p>
+        </div>
+
+      </section>
+
+      <!-- ========== You may also like ========== -->
+      <section class="project-section also-like">
+        <h2 class="project-section-heading">You may also like</h2>
+        <div class="also-like-grid">
+          <a href="work-11.html" class="work-card">
+            <img src="images/2042.png" alt="Web検索窓追加PJ">
+            <div class="work-card-overlay">
+              <span class="work-card-title">Web TOP 検索導線強化PJ</span>
+              <span class="work-card-year">2026</span>
+            </div>
+          </a>
+          <a href="work-02.html" class="work-card">
+            <img src="images/02.png" alt="新規プロダクト0→1">
+            <div class="work-card-overlay">
+              <span class="work-card-title">新規プロダクトの0→1→10のデザイン推進PJ</span>
+              <span class="work-card-year">2024</span>
+            </div>
+          </a>
+          <a href="work-03.html" class="work-card">
+            <img src="images/03.png" alt="デザインチーム生成AI活用">
+            <div class="work-card-overlay">
+              <span class="work-card-title">デザインチームの生成AI活用推進PJ</span>
+              <span class="work-card-year">2025</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="ページ先頭へ">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <script src="main.js"></script>
+</body>
+</html>
