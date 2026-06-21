@@ -87,8 +87,33 @@
         </div>
 
         <!-- 課題→解決策→ゴール図 -->
-        <div class="project-images cols-1" style="margin-top: 32px;">
-          <img src="images/f62cb4ad-955f-475d-ae34-b3da5850fc06.png" alt="課題・解決策・ゴール">
+        <div class="case-diagram">
+          <div class="case-flow">
+            <div class="case-flow-card">
+              <div class="case-flow-label">課題</div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">AI導入効果が数字で証明できない</p>
+              </div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">誰がどんな使い方をしているか把握できない</p>
+              </div>
+            </div>
+            <div class="case-flow-arrow">→</div>
+            <div class="case-flow-card">
+              <div class="case-flow-label">解決策</div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">生産性削減時間の定量可視化</p>
+              </div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">利用状況・会話履歴の可視化</p>
+              </div>
+            </div>
+            <div class="case-flow-arrow">→</div>
+            <div class="case-flow-card case-flow-card--goal">
+              <div class="case-flow-label">ゴール</div>
+              <p class="case-flow-title">管理者が社内展開・ROI提示を自信を持って行える管理機能</p>
+            </div>
+          </div>
         </div>
 
         <!-- プロセス図 3ステップ -->
@@ -149,8 +174,47 @@
         </div>
 
         <!-- デザインプロセス4象限 -->
-        <div class="project-images cols-1" style="margin-top: 32px;">
-          <img src="images/384ef688-d342-47a2-874b-b61f99bc4e7d.png" alt="デザインプロセスを一貫してリード — 1人デザイナーとして提案から実行まで担当">
+        <div class="proc-grid">
+          <div class="proc-card">
+            <span class="proc-card-label">01　v1ラフ作成</span>
+            <p class="proc-card-sub">仮説を素早く形にする</p>
+            <ul>
+              <li>ローコストで仮説を可視化</li>
+              <li>粗いワイヤーフレームを作成</li>
+              <li>ステークホルダーへ早期共有</li>
+              <li>FBをもとに方向性を確定</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">02　競合調査</span>
+            <p class="proc-card-sub">設計方針の根拠を収集する</p>
+            <ul>
+              <li>国内外の管理ダッシュボードを調査</li>
+              <li>UI・機能の比較整理</li>
+              <li>参考事例のスクリーンショット収集</li>
+              <li>設計方針へのインサイト反映</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">03　ユーザーインタビュー</span>
+            <p class="proc-card-sub">ユーザーのニーズを深掘る</p>
+            <ul>
+              <li>関係者6名へのインタビュー設計・実施</li>
+              <li>AI利用状況のヒアリング</li>
+              <li>課題と要望の定性的な把握</li>
+              <li>ペインの整理</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">04　UI設計</span>
+            <p class="proc-card-sub">一貫性と品質を高める</p>
+            <ul>
+              <li>高品質なUI設計・ブラッシュアップ</li>
+              <li>ダッシュボード画面の設計</li>
+              <li>提案・合意形成</li>
+              <li>開発チームへの仕様共有</li>
+            </ul>
+          </div>
         </div>
 
         <div style="margin: 32px 60px 0;">
@@ -173,8 +237,70 @@
         </div>
 
         <!-- ペルソナ・課題・理想状態図 -->
-        <div class="project-images cols-1" style="margin-top: 24px;">
-          <img src="images/7762e7b3-19b1-4f2f-ada2-0cacbe6d16d5.png" alt="提供価値 — ペルソナ・達成を拒む要因・解決策・理想の状態">
+        <div class="value-banner">
+          <p class="value-banner-label">— 提供価値 —</p>
+          <p class="value-banner-title">AI活用の成果を数字で示し、管理者が自信を持って社内展開できる管理機能</p>
+        </div>
+        <div class="persona-grid">
+          <!-- どんな人？ -->
+          <div class="persona-card">
+            <div class="persona-head">どんな人？</div>
+            <p class="persona-sub">属性</p>
+            <ul class="persona-list">
+              <li>年齢：42歳 / 性別：男性</li>
+              <li>職種：DX推進マネージャー・情報システム部門</li>
+              <li>普段の業務：
+                <ul class="persona-list persona-list--nested">
+                  <li>社内AIツールの導入・運用管理</li>
+                  <li>経営層へのDX進捗レポート</li>
+                  <li>部門横断のAI活用推進</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="persona-sub">ユースケース</p>
+            <ul class="persona-list">
+              <li>月次の利用状況レポート作成</li>
+              <li>役員向けROI報告資料の準備</li>
+              <li>AI非活用部門への展開推進</li>
+            </ul>
+          </div>
+
+          <!-- 達成を拒む要因 + 解決策 -->
+          <div class="persona-col">
+            <div class="persona-card">
+              <div class="persona-head">達成を拒む要因</div>
+              <div class="persona-item">
+                <span class="persona-pill">課題1</span>
+                <span>AI導入後も生産性向上を数字で示せず、次フェーズの予算申請に根拠がない</span>
+              </div>
+              <div class="persona-item">
+                <span class="persona-pill">課題2</span>
+                <span>誰がどのくらいAIを活用しているか把握できず、展開戦略が立てられない</span>
+              </div>
+            </div>
+            <div class="persona-card">
+              <div class="persona-head">解決策</div>
+              <div class="persona-item">
+                <span class="persona-pill">解決策1</span>
+                <span>AIによる業務時間削減量を定量的に可視化。ROI・コスト削減の数字を自動算出</span>
+              </div>
+              <div class="persona-item">
+                <span class="persona-pill">解決策2</span>
+                <span>ユーザー別の利用頻度・会話ログを一覧化。活用状況を一目で把握できるダッシュボード</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 理想の状態 -->
+          <div class="persona-card persona-card--goal">
+            <div class="persona-head">理想の状態</div>
+            <p class="persona-goal-title">AI活用の成果を数字で示し、自信を持って経営層に提案できる</p>
+            <div class="persona-goal-body">
+              <p>削減時間・ROIが数値で確認できるため、予算申請の根拠資料をすぐに準備できる。</p>
+              <p>また、利用状況が把握できるため、活用が進んでいない部門への展開施策を具体的に立案できる。</p>
+              <p>管理コストが下がり、AI推進担当としての成果が可視化される。</p>
+            </div>
+          </div>
         </div>
 
         <!-- インタビューニーズ 3つ -->
