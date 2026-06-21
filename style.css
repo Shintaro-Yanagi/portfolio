@@ -908,24 +908,19 @@ nav {
 .impact-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 12px;
   margin: 24px 60px 0;
 }
 
 .impact-item {
   padding: 28px 24px;
-  background: #1a1a1a;
-  color: #fff;
-}
-
-.impact-item:nth-child(2) {
-  background: #333;
-}
-
-.impact-item:nth-child(3) {
   background: #f8f8f8;
   color: #1a1a1a;
   border: 1px solid var(--color-border);
+}
+
+.impact-item:nth-child(1) {
+  border-color: #1a1a1a;
 }
 
 .impact-number {
@@ -938,6 +933,7 @@ nav {
 .impact-text {
   font-size: 14px;
   line-height: 1.8;
+  color: #555;
 }
 
 .concept-map {
