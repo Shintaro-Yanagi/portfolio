@@ -57,6 +57,35 @@
         </div>
       </section>
 
+      <!-- ========== ひと目でわかる Before / After ========== -->
+      <section class="project-section" id="before-after">
+        <h2 class="project-section-heading">ひと目でわかる Before / After</h2>
+        <div class="project-text">
+          <p>使われていない4つのグリッドボタンと低効率動線が上部を占有していた画面を、検索窓を最優先にしたシンプルな構成へ再設計。「探す」という本来の目的に最短で集中できる画面にした。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/search_2046.png" alt="探すタブ改善 Before/After 全体像">
+        </div>
+
+        <!-- 変更点サマリー 3点 -->
+        <div class="annotation-grid" style="margin-top: 32px;">
+          <div class="annotation-card">
+            <strong>動線を絞ってシンプルに</strong>
+            <p>上部を占有していた横4列のグリッドボタンを、使用頻度の高い2つのコンパクトなボタンに集約。検索窓を最上部で強調した。</p>
+          </div>
+          <div class="annotation-card">
+            <strong>CVR最高の動線を前面へ</strong>
+            <p>埋もれていた「保存した検索条件」（CVR全動線中最高）を検索履歴の直下に再配置し、活用率を引き上げる設計に。</p>
+          </div>
+          <div class="annotation-card">
+            <strong>低効率動線は下部へ整理</strong>
+            <p>購入CVR1%未満の求人投稿・人材紹介・ブログを「関連サービス」として最下部に移動。メイン動線のノイズを削減した。</p>
+          </div>
+        </div>
+
+      </section>
+
       <!-- ========== 目次 ========== -->
       <section class="project-section">
         <h2 class="project-section-heading">目次</h2>
@@ -67,6 +96,7 @@
           <li><span class="toc-number">04</span><a href="#prototype">プロトタイプ</a></li>
           <li><span class="toc-number">05</span><a href="#closing">終わりに</a></li>
         </ol>
+        <p class="project-text" style="margin-top:16px; color:#aaa; font-size:14px;">※全体像は冒頭の「ひと目でわかる Before / After」を参照</p>
       </section>
 
       <!-- ========== プロジェクトの概要 ========== -->
@@ -219,20 +249,88 @@
           </div>
         </div>
 
+        <!-- 複数案の検討 → 最終案へ収束 -->
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>3. 複数案を検討し、最終案へ収束</strong></p>
+          <p>最終案に至るまで、構成の異なる複数案を検討し、段階的に絞り込んだ。代表的な2案と、それぞれを見送った理由を残す。</p>
+        </div>
+
+        <!-- 案A -->
+        <div class="project-text" style="margin-top: 24px;">
+          <p><strong>■ 案A：タブで動線を分ける構成</strong><br>複雑になりがちな検索履歴をタブ（サービス／プロ人材／ブログ）で整理し、カテゴリを一覧で見せる案。動線をタブで切り分けることで画面の交通整理を狙った。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/search_botsu.png" alt="案A（見送り）— タブで動線を3つに分ける構成案">
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">🤔 案Aの狙い</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>複雑な検索履歴をタブで整理</li>
+              <li>サービス／プロ人材／ブログを切り替え式に分割</li>
+              <li>カテゴリを一覧で見やすく提示</li>
+            </ul>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">⚠️ 見送った理由</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>検索窓を最優先で目立たせたいのに、タブとカテゴリ導線が目立ち、優先度が伝わらない</li>
+              <li>利用の少ないブログにまでタブの一等地を割くことになる</li>
+              <li>ブログが3番目に目立つ優先順位となり、実態（低利用）と矛盾</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 案B -->
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>■ 案B：タブを2つに絞り、カテゴリを圧縮した中間案</strong><br>案Aから整理を進めた案。タブをサービス／プロ人材の2つに絞り、カテゴリを大きな画像カードからコンパクトなアイコングリッドに圧縮。ブログは関連サービスへ降格させた。</p>
+        </div>
+
+        <div class="project-images cols-1" style="margin-top: 24px;">
+          <img src="images/search_botsu2.png" alt="案B（見送り）— タブ2つ＋カテゴリをアイコングリッドに圧縮した中間案">
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
+          <div style="background:#f5f5f5; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">🤔 案Bの狙い</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>タブをサービス／プロ人材の2つに削減</li>
+              <li>カテゴリをアイコングリッドに圧縮し省スペース化</li>
+              <li>ブログを関連サービスへ降格</li>
+            </ul>
+          </div>
+          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px;">
+            <p style="font-weight:700; margin:0 0 16px;">⚠️ 見送った理由</p>
+            <ul style="margin:0; padding-left:20px; line-height:2;">
+              <li>圧縮してもカテゴリ一覧が画面の主役を占めたまま</li>
+              <li>プロ人材をタブ内に入れると訴求が弱まる</li>
+              <li>結果「カテゴリだけで探すサービス」に見え、人材を探す軸が伝わらない</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin: 16px 60px 0;">
+          <div class="flow-callout">
+            <strong>💡 収束：</strong>2案の検証を通じて、カテゴリを主役にすると「カテゴリで探すサービス」に見え、本来あるプロ人材を探す軸が弱まると確認。最終案ではカテゴリ・プロ人材を対等な2ボタンに整理し、検索履歴・保存条件を前面に出すことで、両方の探し方を保ちながら検索を主役にした。
+          </div>
+        </div>
+
       </section>
 
       <!-- ========== コア課題の解決に向けたUI設計 ========== -->
       <section class="project-section" id="design">
         <h2 class="project-section-heading">コア課題の解決に向けたUI設計</h2>
 
-        <div class="project-text">
-          <p><strong>1. 横4列のアイコンボタンを2つのコンパクトなボタンに絞り込み</strong></p>
-          <p>「カテゴリから探す」「プロ人材を探す」「求人募集を投稿する」「人材を紹介してもらう」の4つが横並びで占有していたスペースを、使用頻度の高い2つに絞ってコンパクトなボタンに変更。検索窓が最上部に強調され、画面の情報密度が下がり、ユーザーの視線を自然に検索窓へ誘導できる設計に。</p>
+        <!-- 改善の全体像 Before/After -->
+        <div class="project-images cols-1">
+          <img src="images/search_2049.png" alt="探すタブ改善の全体像 Before/After — 動線整理・検索履歴・保存条件の再配置">
         </div>
 
-        <!-- Before/After 画像 -->
-        <div class="project-images cols-1" style="margin-top: 24px;">
-          <img src="images/search_2046.png" alt="グリッドボタン廃止 Before/After">
+        <div class="project-text" style="margin-top: 40px;">
+          <p><strong>1. 横4列のアイコンボタンを2つのコンパクトなボタンに絞り込み</strong></p>
+          <p>「カテゴリから探す」「プロ人材を探す」「求人募集を投稿する」「人材を紹介してもらう」の4つが横並びで占有していたスペースを、使用頻度の高い2つに絞ってコンパクトなボタンに変更。検索窓が最上部に強調され、画面の情報密度が下がり、ユーザーの視線を自然に検索窓へ誘導できる設計に。</p>
         </div>
 
         <!-- Before/After 対比 -->
@@ -260,57 +358,6 @@
         <div class="project-text" style="margin-top: 40px;">
           <p><strong>2. 低効率な動線を「関連サービス」として下部に移動</strong></p>
           <p>「求人募集を投稿する」（購入CVRは1%未満）・「人材を紹介してもらう」・「ブログを探す」を探すタブのメインコンテンツから外し、画面下部の関連サービスセクションに整理。必要なユーザーには引き続き届きつつ、メイン動線のノイズを削減した。</p>
-        </div>
-
-        <div class="project-text" style="margin-top: 40px;">
-          <p><strong>3. 「保存した検索条件」を検索履歴の直下に配置</strong></p>
-          <p>「保存した検索条件」とは、ユーザーが設定した検索条件を保存しておける機能。再訪時に同じ条件で即検索できるため、購入意欲の高いリピートユーザーに特化した、CVRへの貢献が大きい機能だ。</p>
-          <p style="margin-top:16px;">データを見ると、CVRは全動線中最高水準。一方でCTRは約2%以下と低く見えるが、これは母数が「探すタブ表示UU全体」であるためだ。保存条件は保存済みのユーザーにのみ表示される機能のため、全体の母数で割ればCTRは自然と低くなる。つまりCTRの低さは発見性の問題ではなく、集計の構造上の特性。</p>
-          <p style="margin-top:16px;">重要なのはCVRが突出して高いという事実。保存条件を持ち・活用したユーザーは、他のどの動線より高い確率で購入に至っている。この機能をより見つけやすい位置に移動させることで、保存条件を持つユーザーの活用率が上がり、CVR最高の動線をさらに活かせると判断した。</p>
-          <p style="margin-top:16px;">配置先として「検索履歴の直下」を選んだのはユーザーの行動フローに基づく。検索履歴を確認するユーザーは「以前探したものを再検索したい」という意図を持っており、その直後に「保存した条件」が目に入ることで、より精度の高い再検索へ自然に誘導できる。</p>
-        </div>
-
-        <!-- CVR対比カード -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin: 24px 60px 0;">
-          <div style="background:#f5f5f5; border-radius:8px; padding:24px; text-align:center;">
-            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 8px;">CTRが低い理由</p>
-            <p style="font-size:16px; font-weight:700; margin:0; color:#1a1a1a; line-height:1.6;">母数 = 探すタブ全表示UU<br>（保存条件あり/なし問わず）</p>
-            <p style="font-size:14px; color:#555; margin:8px 0 0;">構造上、低くなるのは当然</p>
-          </div>
-          <div style="background:#1a1a1a; color:#fff; border-radius:8px; padding:24px; text-align:center;">
-            <p style="font-weight:700; font-size:14px; color:#aaa; margin:0 0 8px;">CVRが示す本質</p>
-            <p style="font-size:16px; font-weight:700; margin:0; line-height:1.6;">全動線中 最高水準<br>検索窓・検索履歴を上回る</p>
-            <p style="font-size:14px; color:#aaa; margin:8px 0 0;">使ったユーザーの購入率が突出</p>
-          </div>
-        </div>
-
-        <div style="margin: 16px 60px 0;">
-          <div class="flow-callout">
-            <strong>💡 判断：</strong>CTRの低さを「見つからない問題」と短絡せず、母数の構造を正しく解釈。CVRが突出して高い事実をもとに「保存条件を持つユーザーの活用率を上げる」という配置最適化へ施策を設計した。
-          </div>
-        </div>
-
-        <!-- 検索履歴・保存条件 Before/After 画像 -->
-        <div class="project-images cols-1" style="margin-top: 32px;">
-          <img src="images/search_2049.png" alt="検索履歴・保存条件 配置改善 Before/After">
-        </div>
-
-        <!-- 改善による提供価値（3カラム） -->
-        <div style="margin: 40px 60px 0;">
-          <div class="annotation-grid">
-            <div class="annotation-item">
-              <div class="annotation-title">CVR向上</div>
-              <div class="annotation-body">低効率動線の整理により、検索→購入の流れをダイレクトに。</div>
-            </div>
-            <div class="annotation-item">
-              <div class="annotation-title">発見性の向上</div>
-              <div class="annotation-body">CVR最高の「保存条件」を目立つ位置へ配置。埋もれた機会損失を解消。</div>
-            </div>
-            <div class="annotation-item">
-              <div class="annotation-title">UXのシンプル化</div>
-              <div class="annotation-body">迷いを排除し、ユーザーが本来の目的（サービスを探す）に集中できる画面へ。</div>
-            </div>
-          </div>
         </div>
 
       </section>
