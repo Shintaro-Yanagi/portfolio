@@ -1123,6 +1123,158 @@ nav {
   color: rgba(255,255,255,0.76);
 }
 
+/* 複数項目を持つ case-flow カード（課題・解決策） */
+.case-flow-item + .case-flow-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.case-flow-item-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.case-flow-item-body {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* プロセス 2×2 グリッド */
+.proc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 24px 60px 0;
+}
+
+.proc-card {
+  background: #f8f8f8;
+  border: 1px solid var(--color-border);
+  padding: 28px 26px;
+}
+
+.proc-card-label {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.proc-card-sub {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.proc-card ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+}
+
+.proc-card li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.proc-card li::before {
+  content: '・';
+  color: var(--color-text-sub);
+}
+
+/* 課題整理（2カード + ニーズ） */
+.issue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin: 24px 60px 0;
+}
+
+.issue-card {
+  background: #f8f8f8;
+  border: 1px solid var(--color-border);
+  padding: 0 0 24px;
+}
+
+.issue-card-head {
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 22px;
+  margin-bottom: 20px;
+}
+
+.issue-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding: 0 22px;
+  margin-bottom: 10px;
+}
+
+.issue-card-body {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+  padding: 0 22px;
+}
+
+.needs-box {
+  margin: 16px 60px 0;
+  border: 1px solid #1a1a1a;
+  padding: 24px 28px;
+}
+
+.needs-chip {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.needs-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.needs-list {
+  list-style: none;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.needs-list li {
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+}
+
+.needs-list li::before {
+  content: '▶ ';
+  font-size: 12px;
+  color: #1a1a1a;
+}
+
 /* ===========================
    RESPONSIVE
 =========================== */
@@ -1237,6 +1389,18 @@ nav {
   .kpi-funnel,
   .impact-strip {
     grid-template-columns: 1fr;
+  }
+
+  .proc-grid,
+  .issue-grid {
+    margin-left: var(--side-padding);
+    margin-right: var(--side-padding);
+    grid-template-columns: 1fr;
+  }
+
+  .needs-box {
+    margin-left: var(--side-padding);
+    margin-right: var(--side-padding);
   }
 
   .case-flow-arrow {

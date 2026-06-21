@@ -85,9 +85,39 @@
           <p>未ログインユーザーが訪問直後に「探してみたい」と思えるTOPページ。検索窓をただ置くのではなく、何を探せるか・どんなキーワードで探せばよいかを直感的に理解できる状態を目指した。</p>
         </div>
 
-        <!-- コンセプト画像 -->
-        <div class="project-images cols-1" style="margin-top: 24px;">
-          <img src="images/11-concept.png" alt="コンセプト設計フロー">
+        <!-- コンセプト図 -->
+        <div class="case-diagram">
+          <div class="case-flow">
+            <div class="case-flow-card">
+              <div class="case-flow-label">1. 課題</div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">検索に到達できていないユーザーが多い</p>
+                <p class="case-flow-item-body">購入CVRが高い検索行動への入口がなく、機会損失が発生している。</p>
+              </div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">FVスペースが購入貢献に繋がっていない</p>
+                <p class="case-flow-item-body">会員登録CTAの貢献が限定的で、FVスペースを有効活用できていない。</p>
+              </div>
+            </div>
+            <div class="case-flow-arrow">→</div>
+            <div class="case-flow-card">
+              <div class="case-flow-label">2. 解決策</div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">FVに検索窓を設置し、探索行動を促す設計</p>
+                <p class="case-flow-item-body">データを根拠にFV内CTAを検索窓に差し替え。PC / SPで最適な配置を設計。</p>
+              </div>
+              <div class="case-flow-item">
+                <p class="case-flow-item-title">注目ワードで“何を探せるか”を直感的に伝える</p>
+                <p class="case-flow-item-body">チップ形式の注目ワードを6案比較し、カバー感と期待感の両軸で選定。</p>
+              </div>
+            </div>
+            <div class="case-flow-arrow">→</div>
+            <div class="case-flow-card case-flow-card--goal">
+              <div class="case-flow-label">3. ゴール</div>
+              <p class="case-flow-title">訪問直後から“探してみたい”と思えるTOPページ</p>
+              <p class="case-flow-body">未ログインユーザーが検索窓に自然に到達し、購入転換につながる能動的な探索行動を促せる状態を実現する。</p>
+            </div>
+          </div>
         </div>
 
         <!-- プロトタイプ -->
@@ -120,8 +150,47 @@
         </div>
 
         <!-- プロセス図 -->
-        <div class="project-images cols-1" style="margin-top: 24px;">
-          <img src="images/11-process.png" alt="デザインプロセス概要">
+        <div class="proc-grid">
+          <div class="proc-card">
+            <span class="proc-card-label">01　定量分析・課題定義</span>
+            <p class="proc-card-sub">データを起点に課題を定義する</p>
+            <ul>
+              <li>Amplitudeで検索・購入CVRを分析</li>
+              <li>FV登録CTAの貢献度を定量確認</li>
+              <li>Androidアプリの先行ABテスト結果を参照</li>
+              <li>競合マーケットプレイスの調査</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">02　要件定義・スコープ決め</span>
+            <p class="proc-card-sub">チームの合意を形成しながら推進する</p>
+            <ul>
+              <li>PC / SP別の施策方針を整理・合意</li>
+              <li>注目ワード6案の比較・選定</li>
+              <li>ABテスト対象範囲のスコープ決め</li>
+              <li>POへの施策妥当性説明</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">03　UIデザイン</span>
+            <p class="proc-card-sub">データと事業インパクトに接続したUI設計</p>
+            <ul>
+              <li>FV検索窓のPC / SPデザイン</li>
+              <li>注目ワードのチップUI設計</li>
+              <li>FigJamで仕様を視覚的に整理</li>
+              <li>エンジニアへの仕様伝達・MTG</li>
+            </ul>
+          </div>
+          <div class="proc-card">
+            <span class="proc-card-label">04　ABテスト設計</span>
+            <p class="proc-card-sub">効果を正確に測るための検証設計</p>
+            <ul>
+              <li>メインKPI：検索利用率</li>
+              <li>ガードレール指標：会員登録率・購入CVR</li>
+              <li>DAチームと連携しサンプルサイズ設計</li>
+              <li>未ログインユーザー限定でテスト設計</li>
+            </ul>
+          </div>
         </div>
 
       </section>
@@ -136,8 +205,26 @@
         </div>
 
         <!-- 課題整理図 -->
-        <div class="project-images cols-1" style="margin-top: 24px;">
-          <img src="images/11-kadai.png" alt="データから見えた検索導線の課題">
+        <p style="font-weight:700; font-size:18px; padding:0 60px; margin-top:4px;">データから見えた、検索導線の課題</p>
+        <div class="issue-grid">
+          <div class="issue-card">
+            <div class="issue-card-head">課題1</div>
+            <p class="issue-card-title">検索に到達できていないユーザーが多い…</p>
+            <p class="issue-card-body">キーワード検索経由の購入CVRはカテゴリ経由の約1.4倍高いにもかかわらず、未ログインTOPには目立つ検索入口がなく、購入転換の機会を損失している状態だった。</p>
+          </div>
+          <div class="issue-card">
+            <div class="issue-card-head">課題2</div>
+            <p class="issue-card-title">FVのスペースが有効活用できていない…</p>
+            <p class="issue-card-body">FVの会員登録CTAバナーの登録貢献度はヘッダー経由と比較して限定的。スペースを検索窓に転換する余地があると判断した。</p>
+          </div>
+        </div>
+        <div class="needs-box">
+          <span class="needs-chip">ニーズ</span>
+          <p class="needs-title">訪問直後から“探したい”と思えるTOPページにしたい</p>
+          <ul class="needs-list">
+            <li>未ログインユーザーが検索行動に自然に移れる導線がほしい</li>
+            <li>FVのスペースを購入CVR改善に直結する要素に使いたい</li>
+          </ul>
         </div>
 
         <div class="project-text" style="margin-top: 40px;">
