@@ -1303,7 +1303,7 @@ nav {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
   margin: 16px 60px 0;
-  align-items: start;
+  align-items: stretch;
 }
 
 .persona-col {
@@ -1319,9 +1319,8 @@ nav {
 }
 
 .persona-card--goal {
-  background: #1a1a1a;
+  background: #fff;
   border-color: #1a1a1a;
-  color: #fff;
 }
 
 .persona-head {
@@ -1334,10 +1333,6 @@ nav {
   margin-bottom: 18px;
 }
 
-.persona-card--goal .persona-head {
-  background: #fff;
-  color: #1a1a1a;
-}
 
 .persona-sub {
   font-size: 13px;
@@ -1406,7 +1401,7 @@ nav {
   font-size: 17px;
   font-weight: 700;
   line-height: 1.7;
-  color: #fff;
+  color: #1a1a1a;
   padding: 0 22px;
   margin-bottom: 16px;
 }
@@ -1414,7 +1409,7 @@ nav {
 .persona-goal-body {
   font-size: 13px;
   line-height: 1.9;
-  color: rgba(255,255,255,0.82);
+  color: #444;
   padding: 0 22px;
 }
 
