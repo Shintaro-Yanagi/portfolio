@@ -531,7 +531,7 @@ nav {
 }
 
 .funnel-hypothesis p {
-  font-size: 13px;
+  font-size: 14px;
   color: #444;
   line-height: 1.7;
   margin: 0;
@@ -598,7 +598,7 @@ nav {
 }
 
 .process-step-body {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
   color: #555;
 }
@@ -1066,7 +1066,7 @@ nav {
 }
 
 .annotation-card p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
   color: #555;
   margin: 0;
@@ -1114,7 +1114,7 @@ nav {
 
 .kpi-step-body {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
   color: #555;
 }
@@ -1335,7 +1335,7 @@ nav {
 
 
 .persona-sub {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 22px 10px;
@@ -1349,7 +1349,7 @@ nav {
 
 .persona-list {
   list-style: none;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
   color: #444;
   margin: 0 22px;
@@ -1375,7 +1375,7 @@ nav {
   grid-template-columns: auto 1fr;
   gap: 12px;
   padding: 0 22px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
   color: #444;
 }
@@ -1407,7 +1407,7 @@ nav {
 }
 
 .persona-goal-body {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
   color: #444;
   padding: 0 22px;
